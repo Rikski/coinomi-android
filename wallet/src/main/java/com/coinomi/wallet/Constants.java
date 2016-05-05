@@ -213,7 +213,7 @@ public class Constants {
                                                     new ServerAddress("club-cce-2.coinomi.net", 5045)),
             new CoinAddress(RichcoinMain.get(),     new ServerAddress("richx-cce-1.coinomi.net", 5046),
                                                     new ServerAddress("richx-cce-2.coinomi.net", 5046)),
-            new CoinAddress(WorldleadcurrencyMain.get() new ServerAddress("verify.ddns.net", 50001))
+            new CoinAddress(WorldleadcurrencyMain.get(), new ServerAddress("verify.ddns.net", 50001))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
