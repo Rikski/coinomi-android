@@ -30,6 +30,7 @@ import org.bitcoinj.wallet.RedeemData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -185,6 +186,12 @@ public class TransactionCreator {
             tx.setPurpose(Transaction.Purpose.USER_PAYMENT);
             req.setCompleted(true);
             req.fee = calculatedFee;
+            int height =
+            for (Transaction tx : unspent.values()) {
+                int oldheight = (int)tx.getTime();
+                BigDecimal val = (new BigDecimal(tx.getValueSentToMe(this))).movePointLeft(8);
+                fee = fee.add(Transaction.getDemurrageInSatoshi(oldheight-2,height,val));
+            }
             log.info("  completed: {}", req.tx);
         } finally {
             lock.unlock();
