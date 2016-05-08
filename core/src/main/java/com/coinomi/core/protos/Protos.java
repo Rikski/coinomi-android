@@ -8065,6 +8065,24 @@ public final class Protos {
      * millis since epoch the transaction was last updated
      * </pre>
      */
+
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Peercoin family
+     * </pre>
+     */
+    boolean hasRefHeight();
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Peercoin family
+     * </pre>
+     */
+    int getRefHeight();
+
     boolean hasUpdatedAt();
     /**
      * <code>optional int64 updated_at = 5;</code>
@@ -8371,38 +8389,38 @@ public final class Protos {
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               updatedAt_ = input.readInt64();
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 transactionInput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionInput>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               transactionInput_.add(input.readMessage(com.coinomi.core.protos.Protos.TransactionInput.PARSER, extensionRegistry));
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
                 transactionOutput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionOutput>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000200;
               }
               transactionOutput_.add(input.readMessage(com.coinomi.core.protos.Protos.TransactionOutput.PARSER, extensionRegistry));
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 blockHash_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               blockHash_.add(input.readBytes());
               break;
             }
             case 72: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
                 blockRelativityOffsets_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               blockRelativityOffsets_.add(input.readInt32());
               break;
@@ -8410,9 +8428,9 @@ public final class Protos {
             case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800) && input.getBytesUntilLimit() > 0) {
                 blockRelativityOffsets_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               while (input.getBytesUntilLimit() > 0) {
                 blockRelativityOffsets_.add(input.readInt32());
@@ -8422,7 +8440,7 @@ public final class Protos {
             }
             case 82: {
               com.coinomi.core.protos.Protos.TransactionConfidence.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = confidence_.toBuilder();
               }
               confidence_ = input.readMessage(com.coinomi.core.protos.Protos.TransactionConfidence.PARSER, extensionRegistry);
@@ -8430,7 +8448,7 @@ public final class Protos {
                 subBuilder.mergeFrom(confidence_);
                 confidence_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             }
             case 88: {
@@ -8439,38 +8457,43 @@ public final class Protos {
               break;
             }
             case 96: {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               tokenId_ = input.readInt32();
               break;
             }
             case 106: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               extraBytes_ = input.readBytes();
               break;
             }
             case 112: {
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               isTrimmed_ = input.readBool();
               break;
             }
             case 120: {
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               valueSent_ = input.readInt64();
               break;
             }
             case 128: {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               valueReceived_ = input.readInt64();
               break;
             }
             case 136: {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               fee_ = input.readInt64();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               numOfOutputs_ = input.readInt32();
+              break;
+            }
+            case 152: {
+              bitField0_ |= 0x00000020;
+              refHeight_ = input.readInt32();
               break;
             }
           }
@@ -8481,16 +8504,16 @@ public final class Protos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           transactionInput_ = java.util.Collections.unmodifiableList(transactionInput_);
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           transactionOutput_ = java.util.Collections.unmodifiableList(transactionOutput_);
         }
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           blockHash_ = java.util.Collections.unmodifiableList(blockHash_);
         }
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
           blockRelativityOffsets_ = java.util.Collections.unmodifiableList(blockRelativityOffsets_);
         }
         this.unknownFields = unknownFields.build();
@@ -8781,6 +8804,29 @@ public final class Protos {
       return lockTime_;
     }
 
+    public static final int REFHEIGHT_FIELD_NUMBER = 19;
+    private int refHeight_;
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Freicoin family
+     * </pre>
+     */
+    public boolean hasRefHeight() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Freicoin family
+     * </pre>
+     */
+    public int getRefHeight() {
+      return refHeight_;
+    }
+
     public static final int UPDATED_AT_FIELD_NUMBER = 5;
     private long updatedAt_;
     /**
@@ -8791,7 +8837,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>optional int64 updated_at = 5;</code>
@@ -8849,7 +8895,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasNumOfOutputs() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional int32 num_of_outputs = 18;</code>
@@ -8966,7 +9012,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasConfidence() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional .com.coinomi.core.protos.TransactionConfidence confidence = 10;</code>
@@ -8995,7 +9041,7 @@ public final class Protos {
      * <code>optional int32 token_id = 12;</code>
      */
     public boolean hasTokenId() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional int32 token_id = 12;</code>
@@ -9010,7 +9056,7 @@ public final class Protos {
      * <code>optional bytes extra_bytes = 13;</code>
      */
     public boolean hasExtraBytes() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional bytes extra_bytes = 13;</code>
@@ -9029,7 +9075,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasIsTrimmed() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional bool is_trimmed = 14 [default = false];</code>
@@ -9052,7 +9098,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasValueSent() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional int64 value_sent = 15 [default = 0];</code>
@@ -9075,7 +9121,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasValueReceived() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional int64 value_received = 16 [default = 0];</code>
@@ -9098,7 +9144,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasFee() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional int64 fee = 17;</code>
@@ -9117,6 +9163,7 @@ public final class Protos {
       hash_ = com.google.protobuf.ByteString.EMPTY;
       pool_ = com.coinomi.core.protos.Protos.Transaction.Pool.UNSPENT;
       lockTime_ = 0;
+      refHeight_ = 0;
       updatedAt_ = 0L;
       transactionInput_ = java.util.Collections.emptyList();
       numOfOutputs_ = 0;
@@ -9182,7 +9229,7 @@ public final class Protos {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(4, lockTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt64(5, updatedAt_);
       }
       for (int i = 0; i < transactionInput_.size(); i++) {
@@ -9197,32 +9244,35 @@ public final class Protos {
       for (int i = 0; i < blockRelativityOffsets_.size(); i++) {
         output.writeInt32(9, blockRelativityOffsets_.get(i));
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(10, confidence_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(11, time_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeInt32(12, tokenId_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBytes(13, extraBytes_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBool(14, isTrimmed_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeInt64(15, valueSent_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt64(16, valueReceived_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeInt64(17, fee_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeInt32(18, numOfOutputs_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(19, refHeight_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9249,7 +9299,7 @@ public final class Protos {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, lockTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, updatedAt_);
       }
@@ -9279,7 +9329,7 @@ public final class Protos {
         size += dataSize;
         size += 1 * getBlockRelativityOffsetsList().size();
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, confidence_);
       }
@@ -9287,33 +9337,37 @@ public final class Protos {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, time_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, tokenId_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, extraBytes_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isTrimmed_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, valueSent_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(16, valueReceived_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(17, fee_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, numOfOutputs_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeInt32Size(19, refHeight_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9445,44 +9499,46 @@ public final class Protos {
         bitField0_ = (bitField0_ & ~0x00000008);
         lockTime_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
-        updatedAt_ = 0L;
+        refHeight_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
+        updatedAt_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (transactionInputBuilder_ == null) {
           transactionInput_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           transactionInputBuilder_.clear();
         }
         numOfOutputs_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (transactionOutputBuilder_ == null) {
           transactionOutput_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           transactionOutputBuilder_.clear();
         }
         blockHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
-        blockRelativityOffsets_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
+        blockRelativityOffsets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
         if (confidenceBuilder_ == null) {
           confidence_ = com.coinomi.core.protos.Protos.TransactionConfidence.getDefaultInstance();
         } else {
           confidenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
-        tokenId_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
-        extraBytes_ = com.google.protobuf.ByteString.EMPTY;
+        tokenId_ = 0;
         bitField0_ = (bitField0_ & ~0x00002000);
-        isTrimmed_ = false;
+        extraBytes_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00004000);
-        valueSent_ = 0L;
+        isTrimmed_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        valueReceived_ = 0L;
+        valueSent_ = 0L;
         bitField0_ = (bitField0_ & ~0x00010000);
-        fee_ = 0L;
+        valueReceived_ = 0L;
         bitField0_ = (bitField0_ & ~0x00020000);
+        fee_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
 
@@ -9534,69 +9590,73 @@ public final class Protos {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
+        result.refHeight_ = refHeight_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
         result.updatedAt_ = updatedAt_;
         if (transactionInputBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
             transactionInput_ = java.util.Collections.unmodifiableList(transactionInput_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.transactionInput_ = transactionInput_;
         } else {
           result.transactionInput_ = transactionInputBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000040;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000080;
         }
         result.numOfOutputs_ = numOfOutputs_;
         if (transactionOutputBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
             transactionOutput_ = java.util.Collections.unmodifiableList(transactionOutput_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.transactionOutput_ = transactionOutput_;
         } else {
           result.transactionOutput_ = transactionOutputBuilder_.build();
         }
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
-          blockHash_ = java.util.Collections.unmodifiableList(blockHash_);
-          bitField0_ = (bitField0_ & ~0x00000200);
-        }
-        result.blockHash_ = blockHash_;
         if (((bitField0_ & 0x00000400) == 0x00000400)) {
-          blockRelativityOffsets_ = java.util.Collections.unmodifiableList(blockRelativityOffsets_);
+          blockHash_ = java.util.Collections.unmodifiableList(blockHash_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
+        result.blockHash_ = blockHash_;
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          blockRelativityOffsets_ = java.util.Collections.unmodifiableList(blockRelativityOffsets_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
         result.blockRelativityOffsets_ = blockRelativityOffsets_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000080;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
         }
         if (confidenceBuilder_ == null) {
           result.confidence_ = confidence_;
         } else {
           result.confidence_ = confidenceBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.tokenId_ = tokenId_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.extraBytes_ = extraBytes_;
+        result.tokenId_ = tokenId_;
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.isTrimmed_ = isTrimmed_;
+        result.extraBytes_ = extraBytes_;
         if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.valueSent_ = valueSent_;
+        result.isTrimmed_ = isTrimmed_;
         if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.valueReceived_ = valueReceived_;
+        result.valueSent_ = valueSent_;
         if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00002000;
+        }
+        result.valueReceived_ = valueReceived_;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00004000;
         }
         result.fee_ = fee_;
         result.bitField0_ = to_bitField0_;
@@ -9629,6 +9689,9 @@ public final class Protos {
         }
         if (other.hasLockTime()) {
           setLockTime(other.getLockTime());
+        }
+        if (other.hasRefHeight()) {
+          setRefHeight(other.getRefHeight());
         }
         if (other.hasUpdatedAt()) {
           setUpdatedAt(other.getUpdatedAt());
@@ -10024,6 +10087,52 @@ public final class Protos {
         return this;
       }
 
+      private int refHeight_ ;
+      /**
+       * <code>optional int32 refHeight = 19;</code>
+       *
+       * <pre>
+       * Used by Freicoin family
+       * </pre>
+       */
+      public boolean hasRefHeight() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int32 refHeight = 19;</code>
+       *
+       * <pre>
+       * Used by Freicoin family
+       * </pre>
+       */
+      public int getRefHeight() {
+        return refHeight_;
+      }
+      /**
+       * <code>optional int32 refHeight = 19;</code>
+       *
+       * <pre>
+       * Used by Freicoin family
+       * </pre>
+       */
+      public Builder setRefHeight(int value) {
+        bitField0_ |= 0x00000020;
+        refHeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Used by Freicoin family
+       * </pre>
+       */
+      public Builder clearRefHeight() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        refHeight_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long updatedAt_ ;
       /**
        * <code>optional int64 updated_at = 5;</code>
@@ -10033,7 +10142,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>optional int64 updated_at = 5;</code>
@@ -10053,7 +10162,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setUpdatedAt(long value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         updatedAt_ = value;
         onChanged();
         return this;
@@ -10066,7 +10175,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -10075,9 +10184,9 @@ public final class Protos {
       private java.util.List<com.coinomi.core.protos.Protos.TransactionInput> transactionInput_ =
         java.util.Collections.emptyList();
       private void ensureTransactionInputIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           transactionInput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionInput>(transactionInput_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -10227,7 +10336,7 @@ public final class Protos {
       public Builder clearTransactionInput() {
         if (transactionInputBuilder_ == null) {
           transactionInput_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           transactionInputBuilder_.clear();
@@ -10304,7 +10413,7 @@ public final class Protos {
           transactionInputBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder>(
                   transactionInput_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
                   isClean());
           transactionInput_ = null;
@@ -10321,7 +10430,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasNumOfOutputs() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional int32 num_of_outputs = 18;</code>
@@ -10341,7 +10450,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setNumOfOutputs(int value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         numOfOutputs_ = value;
         onChanged();
         return this;
@@ -10354,7 +10463,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearNumOfOutputs() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         numOfOutputs_ = 0;
         onChanged();
         return this;
@@ -10363,9 +10472,9 @@ public final class Protos {
       private java.util.List<com.coinomi.core.protos.Protos.TransactionOutput> transactionOutput_ =
         java.util.Collections.emptyList();
       private void ensureTransactionOutputIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           transactionOutput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionOutput>(transactionOutput_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
          }
       }
 
@@ -10515,7 +10624,7 @@ public final class Protos {
       public Builder clearTransactionOutput() {
         if (transactionOutputBuilder_ == null) {
           transactionOutput_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           transactionOutputBuilder_.clear();
@@ -10592,7 +10701,7 @@ public final class Protos {
           transactionOutputBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>(
                   transactionOutput_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
                   isClean());
           transactionOutput_ = null;
@@ -10602,9 +10711,9 @@ public final class Protos {
 
       private java.util.List<com.google.protobuf.ByteString> blockHash_ = java.util.Collections.emptyList();
       private void ensureBlockHashIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           blockHash_ = new java.util.ArrayList<com.google.protobuf.ByteString>(blockHash_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
       /**
@@ -10702,16 +10811,16 @@ public final class Protos {
        */
       public Builder clearBlockHash() {
         blockHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
 
       private java.util.List<java.lang.Integer> blockRelativityOffsets_ = java.util.Collections.emptyList();
       private void ensureBlockRelativityOffsetsIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
           blockRelativityOffsets_ = new java.util.ArrayList<java.lang.Integer>(blockRelativityOffsets_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
          }
       }
       /**
@@ -10768,7 +10877,7 @@ public final class Protos {
        */
       public Builder clearBlockRelativityOffsets() {
         blockRelativityOffsets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -10784,7 +10893,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasConfidence() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional .com.coinomi.core.protos.TransactionConfidence confidence = 10;</code>
@@ -10817,7 +10926,7 @@ public final class Protos {
         } else {
           confidenceBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -10835,7 +10944,7 @@ public final class Protos {
         } else {
           confidenceBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -10847,7 +10956,7 @@ public final class Protos {
        */
       public Builder mergeConfidence(com.coinomi.core.protos.Protos.TransactionConfidence value) {
         if (confidenceBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800) &&
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
               confidence_ != com.coinomi.core.protos.Protos.TransactionConfidence.getDefaultInstance()) {
             confidence_ =
               com.coinomi.core.protos.Protos.TransactionConfidence.newBuilder(confidence_).mergeFrom(value).buildPartial();
@@ -10858,7 +10967,7 @@ public final class Protos {
         } else {
           confidenceBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -10875,7 +10984,7 @@ public final class Protos {
         } else {
           confidenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       /**
@@ -10886,7 +10995,7 @@ public final class Protos {
        * </pre>
        */
       public com.coinomi.core.protos.Protos.TransactionConfidence.Builder getConfidenceBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getConfidenceFieldBuilder().getBuilder();
       }
@@ -10930,7 +11039,7 @@ public final class Protos {
        * <code>optional int32 token_id = 12;</code>
        */
       public boolean hasTokenId() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional int32 token_id = 12;</code>
@@ -10942,7 +11051,7 @@ public final class Protos {
        * <code>optional int32 token_id = 12;</code>
        */
       public Builder setTokenId(int value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         tokenId_ = value;
         onChanged();
         return this;
@@ -10951,7 +11060,7 @@ public final class Protos {
        * <code>optional int32 token_id = 12;</code>
        */
       public Builder clearTokenId() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         tokenId_ = 0;
         onChanged();
         return this;
@@ -10962,7 +11071,7 @@ public final class Protos {
        * <code>optional bytes extra_bytes = 13;</code>
        */
       public boolean hasExtraBytes() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional bytes extra_bytes = 13;</code>
@@ -10977,7 +11086,7 @@ public final class Protos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00004000;
         extraBytes_ = value;
         onChanged();
         return this;
@@ -10986,7 +11095,7 @@ public final class Protos {
        * <code>optional bytes extra_bytes = 13;</code>
        */
       public Builder clearExtraBytes() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         extraBytes_ = getDefaultInstance().getExtraBytes();
         onChanged();
         return this;
@@ -11001,7 +11110,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasIsTrimmed() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional bool is_trimmed = 14 [default = false];</code>
@@ -11021,7 +11130,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setIsTrimmed(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         isTrimmed_ = value;
         onChanged();
         return this;
@@ -11034,7 +11143,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearIsTrimmed() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         isTrimmed_ = false;
         onChanged();
         return this;
@@ -11049,7 +11158,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasValueSent() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional int64 value_sent = 15 [default = 0];</code>
@@ -11069,7 +11178,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setValueSent(long value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         valueSent_ = value;
         onChanged();
         return this;
@@ -11082,7 +11191,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearValueSent() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         valueSent_ = 0L;
         onChanged();
         return this;
@@ -11097,7 +11206,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasValueReceived() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <code>optional int64 value_received = 16 [default = 0];</code>
@@ -11117,7 +11226,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setValueReceived(long value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         valueReceived_ = value;
         onChanged();
         return this;
@@ -11130,7 +11239,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearValueReceived() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         valueReceived_ = 0L;
         onChanged();
         return this;
@@ -11145,7 +11254,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasFee() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
        * <code>optional int64 fee = 17;</code>
@@ -11165,7 +11274,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setFee(long value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         fee_ = value;
         onChanged();
         return this;
@@ -11178,7 +11287,7 @@ public final class Protos {
        * </pre>
        */
       public Builder clearFee() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         fee_ = 0L;
         onChanged();
         return this;
