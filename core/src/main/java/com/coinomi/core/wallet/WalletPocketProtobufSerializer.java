@@ -63,6 +63,7 @@ import static org.bitcoinj.params.Networks.Family.NUBITS;
 import static org.bitcoinj.params.Networks.Family.PEERCOIN;
 import static org.bitcoinj.params.Networks.Family.REDDCOIN;
 import static org.bitcoinj.params.Networks.Family.VPNCOIN;
+import static org.bitcoinj.params.Networks.Family.WORLDLEADCURRENCY;
 import static org.bitcoinj.params.Networks.isFamily;
 
 
@@ -441,6 +442,10 @@ public class WalletPocketProtobufSerializer {
 
         if (txProto.hasUpdatedAt()) {
             tx.setUpdateTime(new Date(txProto.getUpdatedAt()));
+        }
+
+        if (isFamily(tx.getParams(), WORLDLEADCURRENCY)) {
+            tx.setRefHeight(tx.getRefHeight());
         }
 
         int lastIndex = -1;

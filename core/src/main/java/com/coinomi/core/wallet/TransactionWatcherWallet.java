@@ -41,6 +41,7 @@ import org.bitcoinj.utils.Threading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigInteger;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -563,6 +564,23 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
                 value = LongMath.checkedAdd(value, utxo.getValueLong());
             }
             return type.value(value);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public BigInteger getBalanceAfterDemurrage(boolean includeReceiving) {
+        int height = getLastBlockSeenHeight();
+        BigInteger value = BigInteger.ZERO;
+        lock.lock();
+        try {
+            for (OutPointOutput utxo : getUnspentOutputs(includeReceiving).values()) {
+                Transaction tx = getRawTransaction(new Sha256Hash(utxo.getTxHash().toString()));
+                long longV = 0;
+                BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
+                value = value.add(wallet.getTxValueAfterDemurrage(tx, height, bigV));
+            }
+            return value;
         } finally {
             lock.unlock();
         }

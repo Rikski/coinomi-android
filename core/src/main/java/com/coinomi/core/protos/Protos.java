@@ -3,14 +3,17 @@
 
 package com.coinomi.core.protos;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 public final class Protos {
   private Protos() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+          com.google.protobuf.ExtensionRegistry registry) {
   }
   public interface PeerAddressOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.PeerAddress)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.PeerAddress)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes ip_address = 1;</code>
@@ -43,9 +46,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.PeerAddress}
    */
   public static final class PeerAddress extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.PeerAddress)
-      PeerAddressOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.PeerAddress)
+          PeerAddressOrBuilder {
     // Use PeerAddress.newBuilder() to construct.
     private PeerAddress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -65,17 +68,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private PeerAddress(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -86,7 +89,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -112,33 +115,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_PeerAddress_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_PeerAddress_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.PeerAddress.class, com.coinomi.core.protos.Protos.PeerAddress.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.PeerAddress.class, com.coinomi.core.protos.Protos.PeerAddress.Builder.class);
     }
 
     public static com.google.protobuf.Parser<PeerAddress> PARSER =
-        new com.google.protobuf.AbstractParser<PeerAddress>() {
-      public PeerAddress parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PeerAddress(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<PeerAddress>() {
+              public PeerAddress parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new PeerAddress(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<PeerAddress> getParserForType() {
@@ -219,7 +222,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, ipAddress_);
@@ -241,15 +244,15 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, ipAddress_);
+                .computeBytesSize(1, ipAddress_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, port_);
+                .computeUInt32Size(2, port_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, services_);
+                .computeUInt64Size(3, services_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -259,60 +262,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.PeerAddress parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -325,7 +328,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -333,19 +336,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.PeerAddress}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.PeerAddress)
-        com.coinomi.core.protos.Protos.PeerAddressOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.PeerAddress)
+            com.coinomi.core.protos.Protos.PeerAddressOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_PeerAddress_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_PeerAddress_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.PeerAddress.class, com.coinomi.core.protos.Protos.PeerAddress.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.PeerAddress.class, com.coinomi.core.protos.Protos.PeerAddress.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.PeerAddress.newBuilder()
@@ -354,7 +357,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -382,7 +385,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_PeerAddress_descriptor;
       }
 
@@ -445,24 +448,24 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasIpAddress()) {
-          
+
           return false;
         }
         if (!hasPort()) {
-          
+
           return false;
         }
         if (!hasServices()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.PeerAddress parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -496,9 +499,9 @@ public final class Protos {
        */
       public Builder setIpAddress(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         ipAddress_ = value;
         onChanged();
         return this;
@@ -589,8 +592,8 @@ public final class Protos {
   }
 
   public interface EncryptedDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.EncryptedData)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.EncryptedData)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes initialisation_vector = 1;</code>
@@ -630,9 +633,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.EncryptedData}
    */
   public static final class EncryptedData extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.EncryptedData)
-      EncryptedDataOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.EncryptedData)
+          EncryptedDataOrBuilder {
     // Use EncryptedData.newBuilder() to construct.
     private EncryptedData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -652,17 +655,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private EncryptedData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -673,7 +676,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -694,33 +697,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_EncryptedData_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_EncryptedData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.EncryptedData.class, com.coinomi.core.protos.Protos.EncryptedData.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.EncryptedData.class, com.coinomi.core.protos.Protos.EncryptedData.Builder.class);
     }
 
     public static com.google.protobuf.Parser<EncryptedData> PARSER =
-        new com.google.protobuf.AbstractParser<EncryptedData>() {
-      public EncryptedData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EncryptedData(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<EncryptedData>() {
+              public EncryptedData parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new EncryptedData(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<EncryptedData> getParserForType() {
@@ -797,7 +800,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, initialisationVector_);
@@ -816,11 +819,11 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, initialisationVector_);
+                .computeBytesSize(1, initialisationVector_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, encryptedPrivateKey_);
+                .computeBytesSize(2, encryptedPrivateKey_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -830,60 +833,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.EncryptedData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -896,7 +899,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -904,19 +907,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.EncryptedData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.EncryptedData)
-        com.coinomi.core.protos.Protos.EncryptedDataOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.EncryptedData)
+            com.coinomi.core.protos.Protos.EncryptedDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_EncryptedData_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_EncryptedData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.EncryptedData.class, com.coinomi.core.protos.Protos.EncryptedData.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.EncryptedData.class, com.coinomi.core.protos.Protos.EncryptedData.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.EncryptedData.newBuilder()
@@ -925,7 +928,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -951,7 +954,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_EncryptedData_descriptor;
       }
 
@@ -1007,20 +1010,20 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasInitialisationVector()) {
-          
+
           return false;
         }
         if (!hasEncryptedPrivateKey()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.EncryptedData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -1066,9 +1069,9 @@ public final class Protos {
        */
       public Builder setInitialisationVector(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         initialisationVector_ = value;
         onChanged();
         return this;
@@ -1117,9 +1120,9 @@ public final class Protos {
        */
       public Builder setEncryptedPrivateKey(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         encryptedPrivateKey_ = value;
         onChanged();
         return this;
@@ -1150,8 +1153,8 @@ public final class Protos {
   }
 
   public interface DeterministicKeyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.DeterministicKey)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.DeterministicKey)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes chain_code = 1;</code>
@@ -1266,9 +1269,9 @@ public final class Protos {
    * </pre>
    */
   public static final class DeterministicKey extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.DeterministicKey)
-      DeterministicKeyOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.DeterministicKey)
+          DeterministicKeyOrBuilder {
     // Use DeterministicKey.newBuilder() to construct.
     private DeterministicKey(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -1288,17 +1291,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private DeterministicKey(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1309,7 +1312,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1361,7 +1364,7 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           path_ = java.util.Collections.unmodifiableList(path_);
@@ -1371,26 +1374,26 @@ public final class Protos {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_DeterministicKey_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_DeterministicKey_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.DeterministicKey.class, com.coinomi.core.protos.Protos.DeterministicKey.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.DeterministicKey.class, com.coinomi.core.protos.Protos.DeterministicKey.Builder.class);
     }
 
     public static com.google.protobuf.Parser<DeterministicKey> PARSER =
-        new com.google.protobuf.AbstractParser<DeterministicKey>() {
-      public DeterministicKey parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeterministicKey(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<DeterministicKey>() {
+              public DeterministicKey parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new DeterministicKey(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<DeterministicKey> getParserForType() {
@@ -1434,7 +1437,7 @@ public final class Protos {
      * </pre>
      */
     public java.util.List<java.lang.Integer>
-        getPathList() {
+    getPathList() {
       return path_;
     }
     /**
@@ -1557,7 +1560,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, chainCode_);
@@ -1585,28 +1588,28 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, chainCode_);
+                .computeBytesSize(1, chainCode_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < path_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(path_.get(i));
+                  .computeUInt32SizeNoTag(path_.get(i));
         }
         size += dataSize;
         size += 1 * getPathList().size();
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, issuedSubkeys_);
+                .computeUInt32Size(3, issuedSubkeys_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, lookaheadSize_);
+                .computeUInt32Size(4, lookaheadSize_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isFollowing_);
+                .computeBoolSize(5, isFollowing_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1616,60 +1619,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.DeterministicKey parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -1682,7 +1685,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1695,19 +1698,19 @@ public final class Protos {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.DeterministicKey)
-        com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.DeterministicKey)
+            com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_DeterministicKey_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_DeterministicKey_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.DeterministicKey.class, com.coinomi.core.protos.Protos.DeterministicKey.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.DeterministicKey.class, com.coinomi.core.protos.Protos.DeterministicKey.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.DeterministicKey.newBuilder()
@@ -1716,7 +1719,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1748,7 +1751,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_DeterministicKey_descriptor;
       }
 
@@ -1833,16 +1836,16 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasChainCode()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.DeterministicKey parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -1891,9 +1894,9 @@ public final class Protos {
        */
       public Builder setChainCode(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         chainCode_ = value;
         onChanged();
         return this;
@@ -1918,7 +1921,7 @@ public final class Protos {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           path_ = new java.util.ArrayList<java.lang.Integer>(path_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 path = 2;</code>
@@ -1929,7 +1932,7 @@ public final class Protos {
        * </pre>
        */
       public java.util.List<java.lang.Integer>
-          getPathList() {
+      getPathList() {
         return java.util.Collections.unmodifiableList(path_);
       }
       /**
@@ -1963,7 +1966,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setPath(
-          int index, int value) {
+              int index, int value) {
         ensurePathIsMutable();
         path_.set(index, value);
         onChanged();
@@ -1992,10 +1995,10 @@ public final class Protos {
        * </pre>
        */
       public Builder addAllPath(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+              java.lang.Iterable<? extends java.lang.Integer> values) {
         ensurePathIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, path_);
+                values, path_);
         onChanged();
         return this;
       }
@@ -2182,8 +2185,8 @@ public final class Protos {
   }
 
   public interface KeyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Key)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Key)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required .com.coinomi.core.protos.Key.Type type = 1;</code>
@@ -2281,7 +2284,7 @@ public final class Protos {
      * </pre>
      */
     com.google.protobuf.ByteString
-        getLabelBytes();
+    getLabelBytes();
 
     /**
      * <code>optional .com.coinomi.core.protos.DeterministicKey deterministic_key = 6;</code>
@@ -2309,9 +2312,9 @@ public final class Protos {
    * </pre>
    */
   public static final class Key extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Key)
-      KeyOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Key)
+          KeyOrBuilder {
     // Use Key.newBuilder() to construct.
     private Key(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2331,17 +2334,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private Key(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2352,7 +2355,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -2416,33 +2419,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Key_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Key_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.Key.class, com.coinomi.core.protos.Protos.Key.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.Key.class, com.coinomi.core.protos.Protos.Key.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Key> PARSER =
-        new com.google.protobuf.AbstractParser<Key>() {
-      public Key parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Key(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<Key>() {
+              public Key parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Key(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<Key> getParserForType() {
@@ -2453,12 +2456,12 @@ public final class Protos {
      * Protobuf enum {@code com.coinomi.core.protos.Key.Type}
      */
     public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
+            implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>ORIGINAL = 1;</code>
        *
        * <pre>
-       ** Unencrypted - Original bitcoin secp256k1 curve 
+       ** Unencrypted - Original bitcoin secp256k1 curve
        * </pre>
        */
       ORIGINAL(0, 1),
@@ -2466,7 +2469,7 @@ public final class Protos {
        * <code>ENCRYPTED_SCRYPT_AES = 2;</code>
        *
        * <pre>
-       ** Encrypted with Scrypt and AES - Original bitcoin secp256k1 curve 
+       ** Encrypted with Scrypt and AES - Original bitcoin secp256k1 curve
        * </pre>
        */
       ENCRYPTED_SCRYPT_AES(1, 2),
@@ -2499,7 +2502,7 @@ public final class Protos {
        * <code>ORIGINAL = 1;</code>
        *
        * <pre>
-       ** Unencrypted - Original bitcoin secp256k1 curve 
+       ** Unencrypted - Original bitcoin secp256k1 curve
        * </pre>
        */
       public static final int ORIGINAL_VALUE = 1;
@@ -2507,7 +2510,7 @@ public final class Protos {
        * <code>ENCRYPTED_SCRYPT_AES = 2;</code>
        *
        * <pre>
-       ** Encrypted with Scrypt and AES - Original bitcoin secp256k1 curve 
+       ** Encrypted with Scrypt and AES - Original bitcoin secp256k1 curve
        * </pre>
        */
       public static final int ENCRYPTED_SCRYPT_AES_VALUE = 2;
@@ -2549,37 +2552,37 @@ public final class Protos {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
+      internalGetValueMap() {
         return internalValueMap;
       }
       private static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.valueOf(number);
-              }
-            };
+              internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                public Type findValueByNumber(int number) {
+                  return Type.valueOf(number);
+                }
+              };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      getValueDescriptor() {
         return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.Key.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Type[] VALUES = values();
 
       public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+                  "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
@@ -2718,8 +2721,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           label_ = s;
@@ -2735,12 +2738,12 @@ public final class Protos {
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getLabelBytes() {
+    getLabelBytes() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         label_ = b;
         return b;
       } else {
@@ -2804,7 +2807,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, type_.getNumber());
@@ -2835,27 +2838,27 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+                .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, secretBytes_);
+                .computeBytesSize(2, secretBytes_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, encryptedData_);
+                .computeMessageSize(3, encryptedData_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, publicKey_);
+                .computeBytesSize(4, publicKey_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getLabelBytes());
+                .computeBytesSize(5, getLabelBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, deterministicKey_);
+                .computeMessageSize(6, deterministicKey_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2865,60 +2868,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Key parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Key parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Key parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -2931,7 +2934,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2948,19 +2951,19 @@ public final class Protos {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Key)
-        com.coinomi.core.protos.Protos.KeyOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Key)
+            com.coinomi.core.protos.Protos.KeyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Key_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Key_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.Key.class, com.coinomi.core.protos.Protos.Key.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.Key.class, com.coinomi.core.protos.Protos.Key.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.Key.newBuilder()
@@ -2969,7 +2972,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3013,7 +3016,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Key_descriptor;
       }
 
@@ -3107,18 +3110,18 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
+
           return false;
         }
         if (hasEncryptedData()) {
           if (!getEncryptedData().isInitialized()) {
-            
+
             return false;
           }
         }
         if (hasDeterministicKey()) {
           if (!getDeterministicKey().isInitialized()) {
-            
+
             return false;
           }
         }
@@ -3126,9 +3129,9 @@ public final class Protos {
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.Key parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -3212,9 +3215,9 @@ public final class Protos {
        */
       public Builder setSecretBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         secretBytes_ = value;
         onChanged();
         return this;
@@ -3236,7 +3239,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.EncryptedData encryptedData_ = com.coinomi.core.protos.Protos.EncryptedData.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder> encryptedDataBuilder_;
+              com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder> encryptedDataBuilder_;
       /**
        * <code>optional .com.coinomi.core.protos.EncryptedData encrypted_data = 3;</code>
        *
@@ -3289,7 +3292,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setEncryptedData(
-          com.coinomi.core.protos.Protos.EncryptedData.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.EncryptedData.Builder builderForValue) {
         if (encryptedDataBuilder_ == null) {
           encryptedData_ = builderForValue.build();
           onChanged();
@@ -3309,9 +3312,9 @@ public final class Protos {
       public Builder mergeEncryptedData(com.coinomi.core.protos.Protos.EncryptedData value) {
         if (encryptedDataBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              encryptedData_ != com.coinomi.core.protos.Protos.EncryptedData.getDefaultInstance()) {
+                  encryptedData_ != com.coinomi.core.protos.Protos.EncryptedData.getDefaultInstance()) {
             encryptedData_ =
-              com.coinomi.core.protos.Protos.EncryptedData.newBuilder(encryptedData_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.EncryptedData.newBuilder(encryptedData_).mergeFrom(value).buildPartial();
           } else {
             encryptedData_ = value;
           }
@@ -3373,11 +3376,11 @@ public final class Protos {
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder> 
-          getEncryptedDataFieldBuilder() {
+              com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder>
+      getEncryptedDataFieldBuilder() {
         if (encryptedDataBuilder_ == null) {
           encryptedDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder>(
+                  com.coinomi.core.protos.Protos.EncryptedData, com.coinomi.core.protos.Protos.EncryptedData.Builder, com.coinomi.core.protos.Protos.EncryptedDataOrBuilder>(
                   getEncryptedData(),
                   getParentForChildren(),
                   isClean());
@@ -3419,9 +3422,9 @@ public final class Protos {
        */
       public Builder setPublicKey(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         publicKey_ = value;
         onChanged();
         return this;
@@ -3463,7 +3466,7 @@ public final class Protos {
         java.lang.Object ref = label_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             label_ = s;
@@ -3481,12 +3484,12 @@ public final class Protos {
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getLabelBytes() {
+      getLabelBytes() {
         java.lang.Object ref = label_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           label_ = b;
           return b;
         } else {
@@ -3501,11 +3504,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setLabel(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         label_ = value;
         onChanged();
         return this;
@@ -3531,11 +3534,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setLabelBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         label_ = value;
         onChanged();
         return this;
@@ -3543,7 +3546,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.DeterministicKey deterministicKey_ = com.coinomi.core.protos.Protos.DeterministicKey.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder> deterministicKeyBuilder_;
+              com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder> deterministicKeyBuilder_;
       /**
        * <code>optional .com.coinomi.core.protos.DeterministicKey deterministic_key = 6;</code>
        */
@@ -3580,7 +3583,7 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.DeterministicKey deterministic_key = 6;</code>
        */
       public Builder setDeterministicKey(
-          com.coinomi.core.protos.Protos.DeterministicKey.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.DeterministicKey.Builder builderForValue) {
         if (deterministicKeyBuilder_ == null) {
           deterministicKey_ = builderForValue.build();
           onChanged();
@@ -3596,9 +3599,9 @@ public final class Protos {
       public Builder mergeDeterministicKey(com.coinomi.core.protos.Protos.DeterministicKey value) {
         if (deterministicKeyBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              deterministicKey_ != com.coinomi.core.protos.Protos.DeterministicKey.getDefaultInstance()) {
+                  deterministicKey_ != com.coinomi.core.protos.Protos.DeterministicKey.getDefaultInstance()) {
             deterministicKey_ =
-              com.coinomi.core.protos.Protos.DeterministicKey.newBuilder(deterministicKey_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.DeterministicKey.newBuilder(deterministicKey_).mergeFrom(value).buildPartial();
           } else {
             deterministicKey_ = value;
           }
@@ -3644,11 +3647,11 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.DeterministicKey deterministic_key = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder> 
-          getDeterministicKeyFieldBuilder() {
+              com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder>
+      getDeterministicKeyFieldBuilder() {
         if (deterministicKeyBuilder_ == null) {
           deterministicKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder>(
+                  com.coinomi.core.protos.Protos.DeterministicKey, com.coinomi.core.protos.Protos.DeterministicKey.Builder, com.coinomi.core.protos.Protos.DeterministicKeyOrBuilder>(
                   getDeterministicKey(),
                   getParentForChildren(),
                   isClean());
@@ -3669,8 +3672,8 @@ public final class Protos {
   }
 
   public interface TransactionInputOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionInput)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionInput)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes transaction_out_point_hash = 1;</code>
@@ -3761,9 +3764,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.TransactionInput}
    */
   public static final class TransactionInput extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionInput)
-      TransactionInputOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionInput)
+          TransactionInputOrBuilder {
     // Use TransactionInput.newBuilder() to construct.
     private TransactionInput(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3783,17 +3786,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private TransactionInput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3804,7 +3807,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -3840,33 +3843,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionInput_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionInput_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.TransactionInput.class, com.coinomi.core.protos.Protos.TransactionInput.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.TransactionInput.class, com.coinomi.core.protos.Protos.TransactionInput.Builder.class);
     }
 
     public static com.google.protobuf.Parser<TransactionInput> PARSER =
-        new com.google.protobuf.AbstractParser<TransactionInput>() {
-      public TransactionInput parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TransactionInput(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<TransactionInput>() {
+              public TransactionInput parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new TransactionInput(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<TransactionInput> getParserForType() {
@@ -4019,7 +4022,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, transactionOutPointHash_);
@@ -4047,23 +4050,23 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, transactionOutPointHash_);
+                .computeBytesSize(1, transactionOutPointHash_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, transactionOutPointIndex_);
+                .computeUInt32Size(2, transactionOutPointIndex_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, scriptBytes_);
+                .computeBytesSize(3, scriptBytes_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, sequence_);
+                .computeUInt32Size(4, sequence_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, value_);
+                .computeInt64Size(5, value_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4073,60 +4076,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionInput parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -4139,7 +4142,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4147,19 +4150,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.TransactionInput}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionInput)
-        com.coinomi.core.protos.Protos.TransactionInputOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionInput)
+            com.coinomi.core.protos.Protos.TransactionInputOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionInput_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionInput_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.TransactionInput.class, com.coinomi.core.protos.Protos.TransactionInput.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.TransactionInput.class, com.coinomi.core.protos.Protos.TransactionInput.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.TransactionInput.newBuilder()
@@ -4168,7 +4171,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4200,7 +4203,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionInput_descriptor;
       }
 
@@ -4277,24 +4280,24 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasTransactionOutPointHash()) {
-          
+
           return false;
         }
         if (!hasTransactionOutPointIndex()) {
-          
+
           return false;
         }
         if (!hasScriptBytes()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.TransactionInput parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -4340,9 +4343,9 @@ public final class Protos {
        */
       public Builder setTransactionOutPointHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         transactionOutPointHash_ = value;
         onChanged();
         return this;
@@ -4439,9 +4442,9 @@ public final class Protos {
        */
       public Builder setScriptBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         scriptBytes_ = value;
         onChanged();
         return this;
@@ -4568,8 +4571,8 @@ public final class Protos {
   }
 
   public interface TransactionOutputOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionOutput)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionOutput)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required int64 value = 1;</code>
@@ -4669,9 +4672,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.TransactionOutput}
    */
   public static final class TransactionOutput extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionOutput)
-      TransactionOutputOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionOutput)
+          TransactionOutputOrBuilder {
     // Use TransactionOutput.newBuilder() to construct.
     private TransactionOutput(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -4691,17 +4694,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private TransactionOutput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4712,7 +4715,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -4753,33 +4756,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionOutput_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionOutput_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.TransactionOutput.class, com.coinomi.core.protos.Protos.TransactionOutput.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.TransactionOutput.class, com.coinomi.core.protos.Protos.TransactionOutput.Builder.class);
     }
 
     public static com.google.protobuf.Parser<TransactionOutput> PARSER =
-        new com.google.protobuf.AbstractParser<TransactionOutput>() {
-      public TransactionOutput parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TransactionOutput(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<TransactionOutput>() {
+              public TransactionOutput parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new TransactionOutput(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<TransactionOutput> getParserForType() {
@@ -4944,7 +4947,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt64(1, value_);
@@ -4975,27 +4978,27 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, value_);
+                .computeInt64Size(1, value_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, scriptBytes_);
+                .computeBytesSize(2, scriptBytes_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, spentByTransactionHash_);
+                .computeBytesSize(3, spentByTransactionHash_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, spentByTransactionIndex_);
+                .computeInt32Size(4, spentByTransactionIndex_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isSpent_);
+                .computeBoolSize(5, isSpent_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, index_);
+                .computeInt32Size(6, index_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5005,60 +5008,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionOutput parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -5071,7 +5074,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5079,19 +5082,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.TransactionOutput}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionOutput)
-        com.coinomi.core.protos.Protos.TransactionOutputOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionOutput)
+            com.coinomi.core.protos.Protos.TransactionOutputOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionOutput_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionOutput_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.TransactionOutput.class, com.coinomi.core.protos.Protos.TransactionOutput.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.TransactionOutput.class, com.coinomi.core.protos.Protos.TransactionOutput.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.TransactionOutput.newBuilder()
@@ -5100,7 +5103,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5134,7 +5137,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionOutput_descriptor;
       }
 
@@ -5218,20 +5221,20 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasValue()) {
-          
+
           return false;
         }
         if (!hasScriptBytes()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.TransactionOutput parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -5309,9 +5312,9 @@ public final class Protos {
        */
       public Builder setScriptBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         scriptBytes_ = value;
         onChanged();
         return this;
@@ -5360,9 +5363,9 @@ public final class Protos {
        */
       public Builder setSpentByTransactionHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         spentByTransactionHash_ = value;
         onChanged();
         return this;
@@ -5537,8 +5540,8 @@ public final class Protos {
   }
 
   public interface UnspentOutputOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.UnspentOutput)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.UnspentOutput)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes out_point_hash = 1;</code>
@@ -5629,9 +5632,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.UnspentOutput}
    */
   public static final class UnspentOutput extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.UnspentOutput)
-      UnspentOutputOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.UnspentOutput)
+          UnspentOutputOrBuilder {
     // Use UnspentOutput.newBuilder() to construct.
     private UnspentOutput(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5651,17 +5654,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private UnspentOutput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5672,7 +5675,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -5708,33 +5711,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_UnspentOutput_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_UnspentOutput_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.UnspentOutput.class, com.coinomi.core.protos.Protos.UnspentOutput.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.UnspentOutput.class, com.coinomi.core.protos.Protos.UnspentOutput.Builder.class);
     }
 
     public static com.google.protobuf.Parser<UnspentOutput> PARSER =
-        new com.google.protobuf.AbstractParser<UnspentOutput>() {
-      public UnspentOutput parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnspentOutput(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<UnspentOutput>() {
+              public UnspentOutput parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new UnspentOutput(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<UnspentOutput> getParserForType() {
@@ -5891,7 +5894,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, outPointHash_);
@@ -5919,23 +5922,23 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, outPointHash_);
+                .computeBytesSize(1, outPointHash_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, outPointIndex_);
+                .computeUInt32Size(2, outPointIndex_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, scriptBytes_);
+                .computeBytesSize(3, scriptBytes_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, value_);
+                .computeInt64Size(4, value_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isGenerated_);
+                .computeBoolSize(5, isGenerated_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5945,60 +5948,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.UnspentOutput parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -6011,7 +6014,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6019,19 +6022,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.UnspentOutput}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.UnspentOutput)
-        com.coinomi.core.protos.Protos.UnspentOutputOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.UnspentOutput)
+            com.coinomi.core.protos.Protos.UnspentOutputOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_UnspentOutput_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_UnspentOutput_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.UnspentOutput.class, com.coinomi.core.protos.Protos.UnspentOutput.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.UnspentOutput.class, com.coinomi.core.protos.Protos.UnspentOutput.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.UnspentOutput.newBuilder()
@@ -6040,7 +6043,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6072,7 +6075,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_UnspentOutput_descriptor;
       }
 
@@ -6149,28 +6152,28 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasOutPointHash()) {
-          
+
           return false;
         }
         if (!hasOutPointIndex()) {
-          
+
           return false;
         }
         if (!hasScriptBytes()) {
-          
+
           return false;
         }
         if (!hasValue()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.UnspentOutput parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -6216,9 +6219,9 @@ public final class Protos {
        */
       public Builder setOutPointHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         outPointHash_ = value;
         onChanged();
         return this;
@@ -6315,9 +6318,9 @@ public final class Protos {
        */
       public Builder setScriptBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         scriptBytes_ = value;
         onChanged();
         return this;
@@ -6444,8 +6447,8 @@ public final class Protos {
   }
 
   public interface TransactionConfidenceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionConfidence)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.TransactionConfidence)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .com.coinomi.core.protos.TransactionConfidence.Type type = 1;</code>
@@ -6524,8 +6527,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.PeerAddress> 
-        getBroadcastByList();
+    java.util.List<com.coinomi.core.protos.Protos.PeerAddress>
+    getBroadcastByList();
     /**
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
@@ -6537,13 +6540,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder> 
-        getBroadcastByOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder>
+    getBroadcastByOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
     com.coinomi.core.protos.Protos.PeerAddressOrBuilder getBroadcastByOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>optional .com.coinomi.core.protos.TransactionConfidence.Source source = 6;</code>
@@ -6565,9 +6568,9 @@ public final class Protos {
    * </pre>
    */
   public static final class TransactionConfidence extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionConfidence)
-      TransactionConfidenceOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.TransactionConfidence)
+          TransactionConfidenceOrBuilder {
     // Use TransactionConfidence.newBuilder() to construct.
     private TransactionConfidence(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -6587,17 +6590,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private TransactionConfidence(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6608,7 +6611,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6664,7 +6667,7 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           broadcastBy_ = java.util.Collections.unmodifiableList(broadcastBy_);
@@ -6674,26 +6677,26 @@ public final class Protos {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionConfidence_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.TransactionConfidence.class, com.coinomi.core.protos.Protos.TransactionConfidence.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.TransactionConfidence.class, com.coinomi.core.protos.Protos.TransactionConfidence.Builder.class);
     }
 
     public static com.google.protobuf.Parser<TransactionConfidence> PARSER =
-        new com.google.protobuf.AbstractParser<TransactionConfidence>() {
-      public TransactionConfidence parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TransactionConfidence(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<TransactionConfidence>() {
+              public TransactionConfidence parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new TransactionConfidence(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<TransactionConfidence> getParserForType() {
@@ -6704,7 +6707,7 @@ public final class Protos {
      * Protobuf enum {@code com.coinomi.core.protos.TransactionConfidence.Type}
      */
     public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
+            implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>UNKNOWN = 0;</code>
        */
@@ -6778,37 +6781,37 @@ public final class Protos {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
+      internalGetValueMap() {
         return internalValueMap;
       }
       private static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.valueOf(number);
-              }
-            };
+              internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                public Type findValueByNumber(int number) {
+                  return Type.valueOf(number);
+                }
+              };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      getValueDescriptor() {
         return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.TransactionConfidence.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Type[] VALUES = values();
 
       public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+                  "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
@@ -6832,7 +6835,7 @@ public final class Protos {
      * </pre>
      */
     public enum Source
-        implements com.google.protobuf.ProtocolMessageEnum {
+            implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>SOURCE_UNKNOWN = 0;</code>
        *
@@ -6914,37 +6917,37 @@ public final class Protos {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<Source>
-          internalGetValueMap() {
+      internalGetValueMap() {
         return internalValueMap;
       }
       private static com.google.protobuf.Internal.EnumLiteMap<Source>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Source>() {
-              public Source findValueByNumber(int number) {
-                return Source.valueOf(number);
-              }
-            };
+              internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+                public Source findValueByNumber(int number) {
+                  return Source.valueOf(number);
+                }
+              };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      getValueDescriptor() {
         return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.TransactionConfidence.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final Source[] VALUES = values();
 
       public static Source valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+                  "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
@@ -7070,8 +7073,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder> 
-        getBroadcastByOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder>
+    getBroadcastByOrBuilderList() {
       return broadcastBy_;
     }
     /**
@@ -7090,7 +7093,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
      */
     public com.coinomi.core.protos.Protos.PeerAddressOrBuilder getBroadcastByOrBuilder(
-        int index) {
+            int index) {
       return broadcastBy_.get(index);
     }
 
@@ -7134,7 +7137,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, type_.getNumber());
@@ -7165,27 +7168,27 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+                .computeEnumSize(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, appearedAtHeight_);
+                .computeInt32Size(2, appearedAtHeight_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, overridingTransaction_);
+                .computeBytesSize(3, overridingTransaction_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, depth_);
+                .computeInt32Size(4, depth_);
       }
       for (int i = 0; i < broadcastBy_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, broadcastBy_.get(i));
+                .computeMessageSize(5, broadcastBy_.get(i));
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, source_.getNumber());
+                .computeEnumSize(6, source_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7195,60 +7198,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.TransactionConfidence parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -7261,7 +7264,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7276,19 +7279,19 @@ public final class Protos {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionConfidence)
-        com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.TransactionConfidence)
+            com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionConfidence_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.TransactionConfidence.class, com.coinomi.core.protos.Protos.TransactionConfidence.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.TransactionConfidence.class, com.coinomi.core.protos.Protos.TransactionConfidence.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.TransactionConfidence.newBuilder()
@@ -7297,7 +7300,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7336,7 +7339,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor;
       }
 
@@ -7431,9 +7434,9 @@ public final class Protos {
               broadcastByBuilder_ = null;
               broadcastBy_ = other.broadcastBy_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              broadcastByBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getBroadcastByFieldBuilder() : null;
+              broadcastByBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getBroadcastByFieldBuilder() : null;
             } else {
               broadcastByBuilder_.addAllMessages(other.broadcastBy_);
             }
@@ -7449,7 +7452,7 @@ public final class Protos {
       public final boolean isInitialized() {
         for (int i = 0; i < getBroadcastByCount(); i++) {
           if (!getBroadcastBy(i).isInitialized()) {
-            
+
             return false;
           }
         }
@@ -7457,9 +7460,9 @@ public final class Protos {
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.TransactionConfidence parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -7610,9 +7613,9 @@ public final class Protos {
        */
       public Builder setOverridingTransaction(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         overridingTransaction_ = value;
         onChanged();
         return this;
@@ -7686,16 +7689,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.PeerAddress> broadcastBy_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureBroadcastByIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           broadcastBy_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.PeerAddress>(broadcastBy_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder> broadcastByBuilder_;
+              com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder> broadcastByBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
@@ -7731,7 +7734,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder setBroadcastBy(
-          int index, com.coinomi.core.protos.Protos.PeerAddress value) {
+              int index, com.coinomi.core.protos.Protos.PeerAddress value) {
         if (broadcastByBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7748,7 +7751,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder setBroadcastBy(
-          int index, com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
         if (broadcastByBuilder_ == null) {
           ensureBroadcastByIsMutable();
           broadcastBy_.set(index, builderForValue.build());
@@ -7778,7 +7781,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder addBroadcastBy(
-          int index, com.coinomi.core.protos.Protos.PeerAddress value) {
+              int index, com.coinomi.core.protos.Protos.PeerAddress value) {
         if (broadcastByBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7795,7 +7798,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder addBroadcastBy(
-          com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
         if (broadcastByBuilder_ == null) {
           ensureBroadcastByIsMutable();
           broadcastBy_.add(builderForValue.build());
@@ -7809,7 +7812,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder addBroadcastBy(
-          int index, com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.PeerAddress.Builder builderForValue) {
         if (broadcastByBuilder_ == null) {
           ensureBroadcastByIsMutable();
           broadcastBy_.add(index, builderForValue.build());
@@ -7823,11 +7826,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public Builder addAllBroadcastBy(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.PeerAddress> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.PeerAddress> values) {
         if (broadcastByBuilder_ == null) {
           ensureBroadcastByIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, broadcastBy_);
+                  values, broadcastBy_);
           onChanged();
         } else {
           broadcastByBuilder_.addAllMessages(values);
@@ -7864,14 +7867,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public com.coinomi.core.protos.Protos.PeerAddress.Builder getBroadcastByBuilder(
-          int index) {
+              int index) {
         return getBroadcastByFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public com.coinomi.core.protos.Protos.PeerAddressOrBuilder getBroadcastByOrBuilder(
-          int index) {
+              int index) {
         if (broadcastByBuilder_ == null) {
           return broadcastBy_.get(index);  } else {
           return broadcastByBuilder_.getMessageOrBuilder(index);
@@ -7880,8 +7883,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder> 
-           getBroadcastByOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.PeerAddressOrBuilder>
+      getBroadcastByOrBuilderList() {
         if (broadcastByBuilder_ != null) {
           return broadcastByBuilder_.getMessageOrBuilderList();
         } else {
@@ -7893,29 +7896,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.PeerAddress.Builder addBroadcastByBuilder() {
         return getBroadcastByFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.PeerAddress.getDefaultInstance());
+                com.coinomi.core.protos.Protos.PeerAddress.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
       public com.coinomi.core.protos.Protos.PeerAddress.Builder addBroadcastByBuilder(
-          int index) {
+              int index) {
         return getBroadcastByFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.PeerAddress.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.PeerAddress.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.PeerAddress broadcast_by = 5;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.PeerAddress.Builder> 
-           getBroadcastByBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.PeerAddress.Builder>
+      getBroadcastByBuilderList() {
         return getBroadcastByFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder> 
-          getBroadcastByFieldBuilder() {
+              com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder>
+      getBroadcastByFieldBuilder() {
         if (broadcastByBuilder_ == null) {
           broadcastByBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder>(
+                  com.coinomi.core.protos.Protos.PeerAddress, com.coinomi.core.protos.Protos.PeerAddress.Builder, com.coinomi.core.protos.Protos.PeerAddressOrBuilder>(
                   broadcastBy_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -7972,8 +7975,8 @@ public final class Protos {
   }
 
   public interface TransactionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Transaction)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Transaction)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required int32 version = 1;</code>
@@ -8096,8 +8099,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.TransactionInput> 
-        getTransactionInputList();
+    java.util.List<com.coinomi.core.protos.Protos.TransactionInput>
+    getTransactionInputList();
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
@@ -8109,13 +8112,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder> 
-        getTransactionInputOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder>
+    getTransactionInputOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
     com.coinomi.core.protos.Protos.TransactionInputOrBuilder getTransactionInputOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>optional int32 num_of_outputs = 18;</code>
@@ -8137,8 +8140,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.TransactionOutput> 
-        getTransactionOutputList();
+    java.util.List<com.coinomi.core.protos.Protos.TransactionOutput>
+    getTransactionOutputList();
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
@@ -8150,13 +8153,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> 
-        getTransactionOutputOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>
+    getTransactionOutputOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
     com.coinomi.core.protos.Protos.TransactionOutputOrBuilder getTransactionOutputOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>repeated bytes block_hash = 8;</code>
@@ -8314,9 +8317,9 @@ public final class Protos {
    * Protobuf type {@code com.coinomi.core.protos.Transaction}
    */
   public static final class Transaction extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Transaction)
-      TransactionOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Transaction)
+          TransactionOrBuilder {
     // Use Transaction.newBuilder() to construct.
     private Transaction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -8336,17 +8339,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private Transaction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8357,7 +8360,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -8502,7 +8505,7 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           transactionInput_ = java.util.Collections.unmodifiableList(transactionInput_);
@@ -8521,30 +8524,51 @@ public final class Protos {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Transaction_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.Transaction.class, com.coinomi.core.protos.Protos.Transaction.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.Transaction.class, com.coinomi.core.protos.Protos.Transaction.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Transaction> PARSER =
-        new com.google.protobuf.AbstractParser<Transaction>() {
-      public Transaction parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Transaction(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<Transaction>() {
+              public Transaction parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Transaction(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<Transaction> getParserForType() {
       return PARSER;
+    }
+
+
+    /** Calculate demurrage in decimal **/
+    public static BigDecimal getDemurrage(int old_height, int new_height, BigDecimal value) {
+      BigDecimal fee;
+
+      fee = new BigDecimal(0.999996185); // 1-1/Demurrage_RATE from main.h
+      fee = fee.pow(new_height-old_height);
+      fee = fee.multiply(value);
+      fee = value.subtract(fee);
+
+      return fee;
+    }
+
+    /** Calculate demurrage in satoshi **/
+    public static BigInteger getDemurrageInSatoshi(int old_height, int new_height, BigDecimal value) {
+      BigInteger fee;
+      fee = getDemurrage(old_height, new_height, value).setScale(8, BigDecimal.ROUND_HALF_UP).movePointRight(8).toBigIntegerExact();
+
+      return fee;
     }
 
     /**
@@ -8562,7 +8586,7 @@ public final class Protos {
      * </pre>
      */
     public enum Pool
-        implements com.google.protobuf.ProtocolMessageEnum {
+            implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>UNSPENT = 4;</code>
        *
@@ -8644,37 +8668,37 @@ public final class Protos {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<Pool>
-          internalGetValueMap() {
+      internalGetValueMap() {
         return internalValueMap;
       }
       private static com.google.protobuf.Internal.EnumLiteMap<Pool>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Pool>() {
-              public Pool findValueByNumber(int number) {
-                return Pool.valueOf(number);
-              }
-            };
+              internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Pool>() {
+                public Pool findValueByNumber(int number) {
+                  return Pool.valueOf(number);
+                }
+              };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      getValueDescriptor() {
         return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.Transaction.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Pool[] VALUES = values();
 
       public static Pool valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+                  "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
@@ -8861,8 +8885,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder> 
-        getTransactionInputOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder>
+    getTransactionInputOrBuilderList() {
       return transactionInput_;
     }
     /**
@@ -8881,7 +8905,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
      */
     public com.coinomi.core.protos.Protos.TransactionInputOrBuilder getTransactionInputOrBuilder(
-        int index) {
+            int index) {
       return transactionInput_.get(index);
     }
 
@@ -8919,8 +8943,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> 
-        getTransactionOutputOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>
+    getTransactionOutputOrBuilderList() {
       return transactionOutput_;
     }
     /**
@@ -8939,7 +8963,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
      */
     public com.coinomi.core.protos.Protos.TransactionOutputOrBuilder getTransactionOutputOrBuilder(
-        int index) {
+            int index) {
       return transactionOutput_.get(index);
     }
 
@@ -8954,7 +8978,7 @@ public final class Protos {
      * </pre>
      */
     public java.util.List<com.google.protobuf.ByteString>
-        getBlockHashList() {
+    getBlockHashList() {
       return blockHash_;
     }
     /**
@@ -8986,7 +9010,7 @@ public final class Protos {
      * <code>repeated int32 block_relativity_offsets = 9;</code>
      */
     public java.util.List<java.lang.Integer>
-        getBlockRelativityOffsetsList() {
+    getBlockRelativityOffsetsList() {
       return blockRelativityOffsets_;
     }
     /**
@@ -9215,7 +9239,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, version_);
@@ -9285,37 +9309,37 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, version_);
+                .computeInt32Size(1, version_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, hash_);
+                .computeBytesSize(2, hash_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, pool_.getNumber());
+                .computeEnumSize(3, pool_.getNumber());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, lockTime_);
+                .computeUInt32Size(4, lockTime_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, updatedAt_);
+                .computeInt64Size(5, updatedAt_);
       }
       for (int i = 0; i < transactionInput_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, transactionInput_.get(i));
+                .computeMessageSize(6, transactionInput_.get(i));
       }
       for (int i = 0; i < transactionOutput_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, transactionOutput_.get(i));
+                .computeMessageSize(7, transactionOutput_.get(i));
       }
       {
         int dataSize = 0;
         for (int i = 0; i < blockHash_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(blockHash_.get(i));
+                  .computeBytesSizeNoTag(blockHash_.get(i));
         }
         size += dataSize;
         size += 1 * getBlockHashList().size();
@@ -9324,46 +9348,46 @@ public final class Protos {
         int dataSize = 0;
         for (int i = 0; i < blockRelativityOffsets_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(blockRelativityOffsets_.get(i));
+                  .computeInt32SizeNoTag(blockRelativityOffsets_.get(i));
         }
         size += dataSize;
         size += 1 * getBlockRelativityOffsetsList().size();
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, confidence_);
+                .computeMessageSize(10, confidence_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, time_);
+                .computeInt32Size(11, time_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, tokenId_);
+                .computeInt32Size(12, tokenId_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(13, extraBytes_);
+                .computeBytesSize(13, extraBytes_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isTrimmed_);
+                .computeBoolSize(14, isTrimmed_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, valueSent_);
+                .computeInt64Size(15, valueSent_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, valueReceived_);
+                .computeInt64Size(16, valueReceived_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, fee_);
+                .computeInt64Size(17, fee_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, numOfOutputs_);
+                .computeInt32Size(18, numOfOutputs_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
@@ -9377,60 +9401,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Transaction parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -9443,7 +9467,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -9451,19 +9475,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.Transaction}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Transaction)
-        com.coinomi.core.protos.Protos.TransactionOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Transaction)
+            com.coinomi.core.protos.Protos.TransactionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Transaction_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.Transaction.class, com.coinomi.core.protos.Protos.Transaction.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.Transaction.class, com.coinomi.core.protos.Protos.Transaction.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.Transaction.newBuilder()
@@ -9472,7 +9496,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -9547,7 +9571,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Transaction_descriptor;
       }
 
@@ -9714,9 +9738,9 @@ public final class Protos {
               transactionInputBuilder_ = null;
               transactionInput_ = other.transactionInput_;
               bitField0_ = (bitField0_ & ~0x00000040);
-              transactionInputBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getTransactionInputFieldBuilder() : null;
+              transactionInputBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getTransactionInputFieldBuilder() : null;
             } else {
               transactionInputBuilder_.addAllMessages(other.transactionInput_);
             }
@@ -9743,9 +9767,9 @@ public final class Protos {
               transactionOutputBuilder_ = null;
               transactionOutput_ = other.transactionOutput_;
               bitField0_ = (bitField0_ & ~0x00000100);
-              transactionOutputBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getTransactionOutputFieldBuilder() : null;
+              transactionOutputBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getTransactionOutputFieldBuilder() : null;
             } else {
               transactionOutputBuilder_.addAllMessages(other.transactionOutput_);
             }
@@ -9798,28 +9822,28 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasVersion()) {
-          
+
           return false;
         }
         if (!hasHash()) {
-          
+
           return false;
         }
         for (int i = 0; i < getTransactionInputCount(); i++) {
           if (!getTransactionInput(i).isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getTransactionOutputCount(); i++) {
           if (!getTransactionOutput(i).isInitialized()) {
-            
+
             return false;
           }
         }
         if (hasConfidence()) {
           if (!getConfidence().isInitialized()) {
-            
+
             return false;
           }
         }
@@ -9827,9 +9851,9 @@ public final class Protos {
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.Transaction parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -9959,9 +9983,9 @@ public final class Protos {
        */
       public Builder setHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         hash_ = value;
         onChanged();
         return this;
@@ -10088,6 +10112,7 @@ public final class Protos {
       }
 
       private int refHeight_ ;
+
       /**
        * <code>optional int32 refHeight = 19;</code>
        *
@@ -10182,16 +10207,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.TransactionInput> transactionInput_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureTransactionInputIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           transactionInput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionInput>(transactionInput_);
           bitField0_ |= 0x00000080;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder> transactionInputBuilder_;
+              com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder> transactionInputBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
@@ -10227,7 +10252,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder setTransactionInput(
-          int index, com.coinomi.core.protos.Protos.TransactionInput value) {
+              int index, com.coinomi.core.protos.Protos.TransactionInput value) {
         if (transactionInputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10244,7 +10269,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder setTransactionInput(
-          int index, com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
         if (transactionInputBuilder_ == null) {
           ensureTransactionInputIsMutable();
           transactionInput_.set(index, builderForValue.build());
@@ -10274,7 +10299,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder addTransactionInput(
-          int index, com.coinomi.core.protos.Protos.TransactionInput value) {
+              int index, com.coinomi.core.protos.Protos.TransactionInput value) {
         if (transactionInputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10291,7 +10316,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder addTransactionInput(
-          com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
         if (transactionInputBuilder_ == null) {
           ensureTransactionInputIsMutable();
           transactionInput_.add(builderForValue.build());
@@ -10305,7 +10330,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder addTransactionInput(
-          int index, com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.TransactionInput.Builder builderForValue) {
         if (transactionInputBuilder_ == null) {
           ensureTransactionInputIsMutable();
           transactionInput_.add(index, builderForValue.build());
@@ -10319,11 +10344,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public Builder addAllTransactionInput(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.TransactionInput> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.TransactionInput> values) {
         if (transactionInputBuilder_ == null) {
           ensureTransactionInputIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, transactionInput_);
+                  values, transactionInput_);
           onChanged();
         } else {
           transactionInputBuilder_.addAllMessages(values);
@@ -10360,14 +10385,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionInput.Builder getTransactionInputBuilder(
-          int index) {
+              int index) {
         return getTransactionInputFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionInputOrBuilder getTransactionInputOrBuilder(
-          int index) {
+              int index) {
         if (transactionInputBuilder_ == null) {
           return transactionInput_.get(index);  } else {
           return transactionInputBuilder_.getMessageOrBuilder(index);
@@ -10376,8 +10401,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder> 
-           getTransactionInputOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionInputOrBuilder>
+      getTransactionInputOrBuilderList() {
         if (transactionInputBuilder_ != null) {
           return transactionInputBuilder_.getMessageOrBuilderList();
         } else {
@@ -10389,29 +10414,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.TransactionInput.Builder addTransactionInputBuilder() {
         return getTransactionInputFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.TransactionInput.getDefaultInstance());
+                com.coinomi.core.protos.Protos.TransactionInput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionInput.Builder addTransactionInputBuilder(
-          int index) {
+              int index) {
         return getTransactionInputFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.TransactionInput.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.TransactionInput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.TransactionInput.Builder> 
-           getTransactionInputBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.TransactionInput.Builder>
+      getTransactionInputBuilderList() {
         return getTransactionInputFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder> 
-          getTransactionInputFieldBuilder() {
+              com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder>
+      getTransactionInputFieldBuilder() {
         if (transactionInputBuilder_ == null) {
           transactionInputBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder>(
+                  com.coinomi.core.protos.Protos.TransactionInput, com.coinomi.core.protos.Protos.TransactionInput.Builder, com.coinomi.core.protos.Protos.TransactionInputOrBuilder>(
                   transactionInput_,
                   ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
@@ -10470,16 +10495,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.TransactionOutput> transactionOutput_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureTransactionOutputIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           transactionOutput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.TransactionOutput>(transactionOutput_);
           bitField0_ |= 0x00000200;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> transactionOutputBuilder_;
+              com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> transactionOutputBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
@@ -10515,7 +10540,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder setTransactionOutput(
-          int index, com.coinomi.core.protos.Protos.TransactionOutput value) {
+              int index, com.coinomi.core.protos.Protos.TransactionOutput value) {
         if (transactionOutputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10532,7 +10557,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder setTransactionOutput(
-          int index, com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
         if (transactionOutputBuilder_ == null) {
           ensureTransactionOutputIsMutable();
           transactionOutput_.set(index, builderForValue.build());
@@ -10562,7 +10587,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder addTransactionOutput(
-          int index, com.coinomi.core.protos.Protos.TransactionOutput value) {
+              int index, com.coinomi.core.protos.Protos.TransactionOutput value) {
         if (transactionOutputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10579,7 +10604,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder addTransactionOutput(
-          com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
         if (transactionOutputBuilder_ == null) {
           ensureTransactionOutputIsMutable();
           transactionOutput_.add(builderForValue.build());
@@ -10593,7 +10618,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder addTransactionOutput(
-          int index, com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.TransactionOutput.Builder builderForValue) {
         if (transactionOutputBuilder_ == null) {
           ensureTransactionOutputIsMutable();
           transactionOutput_.add(index, builderForValue.build());
@@ -10607,11 +10632,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public Builder addAllTransactionOutput(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.TransactionOutput> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.TransactionOutput> values) {
         if (transactionOutputBuilder_ == null) {
           ensureTransactionOutputIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, transactionOutput_);
+                  values, transactionOutput_);
           onChanged();
         } else {
           transactionOutputBuilder_.addAllMessages(values);
@@ -10648,14 +10673,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionOutput.Builder getTransactionOutputBuilder(
-          int index) {
+              int index) {
         return getTransactionOutputFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionOutputOrBuilder getTransactionOutputOrBuilder(
-          int index) {
+              int index) {
         if (transactionOutputBuilder_ == null) {
           return transactionOutput_.get(index);  } else {
           return transactionOutputBuilder_.getMessageOrBuilder(index);
@@ -10664,8 +10689,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> 
-           getTransactionOutputOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>
+      getTransactionOutputOrBuilderList() {
         if (transactionOutputBuilder_ != null) {
           return transactionOutputBuilder_.getMessageOrBuilderList();
         } else {
@@ -10677,29 +10702,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.TransactionOutput.Builder addTransactionOutputBuilder() {
         return getTransactionOutputFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.TransactionOutput.getDefaultInstance());
+                com.coinomi.core.protos.Protos.TransactionOutput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionOutput.Builder addTransactionOutputBuilder(
-          int index) {
+              int index) {
         return getTransactionOutputFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.TransactionOutput.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.TransactionOutput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.TransactionOutput transaction_output = 7;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.TransactionOutput.Builder> 
-           getTransactionOutputBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.TransactionOutput.Builder>
+      getTransactionOutputBuilderList() {
         return getTransactionOutputFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder> 
-          getTransactionOutputFieldBuilder() {
+              com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>
+      getTransactionOutputFieldBuilder() {
         if (transactionOutputBuilder_ == null) {
           transactionOutputBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>(
+                  com.coinomi.core.protos.Protos.TransactionOutput, com.coinomi.core.protos.Protos.TransactionOutput.Builder, com.coinomi.core.protos.Protos.TransactionOutputOrBuilder>(
                   transactionOutput_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -10714,7 +10739,7 @@ public final class Protos {
         if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           blockHash_ = new java.util.ArrayList<com.google.protobuf.ByteString>(blockHash_);
           bitField0_ |= 0x00000400;
-         }
+        }
       }
       /**
        * <code>repeated bytes block_hash = 8;</code>
@@ -10725,7 +10750,7 @@ public final class Protos {
        * </pre>
        */
       public java.util.List<com.google.protobuf.ByteString>
-          getBlockHashList() {
+      getBlockHashList() {
         return java.util.Collections.unmodifiableList(blockHash_);
       }
       /**
@@ -10759,11 +10784,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setBlockHash(
-          int index, com.google.protobuf.ByteString value) {
+              int index, com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBlockHashIsMutable();
+          throw new NullPointerException();
+        }
+        ensureBlockHashIsMutable();
         blockHash_.set(index, value);
         onChanged();
         return this;
@@ -10778,9 +10803,9 @@ public final class Protos {
        */
       public Builder addBlockHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBlockHashIsMutable();
+          throw new NullPointerException();
+        }
+        ensureBlockHashIsMutable();
         blockHash_.add(value);
         onChanged();
         return this;
@@ -10794,10 +10819,10 @@ public final class Protos {
        * </pre>
        */
       public Builder addAllBlockHash(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+              java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
         ensureBlockHashIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, blockHash_);
+                values, blockHash_);
         onChanged();
         return this;
       }
@@ -10821,13 +10846,13 @@ public final class Protos {
         if (!((bitField0_ & 0x00000800) == 0x00000800)) {
           blockRelativityOffsets_ = new java.util.ArrayList<java.lang.Integer>(blockRelativityOffsets_);
           bitField0_ |= 0x00000800;
-         }
+        }
       }
       /**
        * <code>repeated int32 block_relativity_offsets = 9;</code>
        */
       public java.util.List<java.lang.Integer>
-          getBlockRelativityOffsetsList() {
+      getBlockRelativityOffsetsList() {
         return java.util.Collections.unmodifiableList(blockRelativityOffsets_);
       }
       /**
@@ -10846,7 +10871,7 @@ public final class Protos {
        * <code>repeated int32 block_relativity_offsets = 9;</code>
        */
       public Builder setBlockRelativityOffsets(
-          int index, int value) {
+              int index, int value) {
         ensureBlockRelativityOffsetsIsMutable();
         blockRelativityOffsets_.set(index, value);
         onChanged();
@@ -10865,10 +10890,10 @@ public final class Protos {
        * <code>repeated int32 block_relativity_offsets = 9;</code>
        */
       public Builder addAllBlockRelativityOffsets(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+              java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureBlockRelativityOffsetsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, blockRelativityOffsets_);
+                values, blockRelativityOffsets_);
         onChanged();
         return this;
       }
@@ -10884,7 +10909,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.TransactionConfidence confidence_ = com.coinomi.core.protos.Protos.TransactionConfidence.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder> confidenceBuilder_;
+              com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder> confidenceBuilder_;
       /**
        * <code>optional .com.coinomi.core.protos.TransactionConfidence confidence = 10;</code>
        *
@@ -10937,7 +10962,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setConfidence(
-          com.coinomi.core.protos.Protos.TransactionConfidence.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.TransactionConfidence.Builder builderForValue) {
         if (confidenceBuilder_ == null) {
           confidence_ = builderForValue.build();
           onChanged();
@@ -10957,9 +10982,9 @@ public final class Protos {
       public Builder mergeConfidence(com.coinomi.core.protos.Protos.TransactionConfidence value) {
         if (confidenceBuilder_ == null) {
           if (((bitField0_ & 0x00001000) == 0x00001000) &&
-              confidence_ != com.coinomi.core.protos.Protos.TransactionConfidence.getDefaultInstance()) {
+                  confidence_ != com.coinomi.core.protos.Protos.TransactionConfidence.getDefaultInstance()) {
             confidence_ =
-              com.coinomi.core.protos.Protos.TransactionConfidence.newBuilder(confidence_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.TransactionConfidence.newBuilder(confidence_).mergeFrom(value).buildPartial();
           } else {
             confidence_ = value;
           }
@@ -11021,11 +11046,11 @@ public final class Protos {
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder> 
-          getConfidenceFieldBuilder() {
+              com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder>
+      getConfidenceFieldBuilder() {
         if (confidenceBuilder_ == null) {
           confidenceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder>(
+                  com.coinomi.core.protos.Protos.TransactionConfidence, com.coinomi.core.protos.Protos.TransactionConfidence.Builder, com.coinomi.core.protos.Protos.TransactionConfidenceOrBuilder>(
                   getConfidence(),
                   getParentForChildren(),
                   isClean());
@@ -11084,9 +11109,9 @@ public final class Protos {
        */
       public Builder setExtraBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00004000;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00004000;
         extraBytes_ = value;
         onChanged();
         return this;
@@ -11305,8 +11330,8 @@ public final class Protos {
   }
 
   public interface AddressStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.AddressStatus)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.AddressStatus)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required string address = 1;</code>
@@ -11332,7 +11357,7 @@ public final class Protos {
      * </pre>
      */
     com.google.protobuf.ByteString
-        getAddressBytes();
+    getAddressBytes();
 
     /**
      * <code>required string status = 2;</code>
@@ -11358,15 +11383,15 @@ public final class Protos {
      * </pre>
      */
     com.google.protobuf.ByteString
-        getStatusBytes();
+    getStatusBytes();
   }
   /**
    * Protobuf type {@code com.coinomi.core.protos.AddressStatus}
    */
   public static final class AddressStatus extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.AddressStatus)
-      AddressStatusOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.AddressStatus)
+          AddressStatusOrBuilder {
     // Use AddressStatus.newBuilder() to construct.
     private AddressStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -11386,17 +11411,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private AddressStatus(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -11407,7 +11432,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -11430,33 +11455,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_AddressStatus_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.AddressStatus.class, com.coinomi.core.protos.Protos.AddressStatus.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.AddressStatus.class, com.coinomi.core.protos.Protos.AddressStatus.Builder.class);
     }
 
     public static com.google.protobuf.Parser<AddressStatus> PARSER =
-        new com.google.protobuf.AbstractParser<AddressStatus>() {
-      public AddressStatus parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddressStatus(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<AddressStatus>() {
+              public AddressStatus parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new AddressStatus(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<AddressStatus> getParserForType() {
@@ -11488,8 +11513,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           address_ = s;
@@ -11505,12 +11530,12 @@ public final class Protos {
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getAddressBytes() {
+    getAddressBytes() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         address_ = b;
         return b;
       } else {
@@ -11542,8 +11567,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           status_ = s;
@@ -11559,12 +11584,12 @@ public final class Protos {
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
+    getStatusBytes() {
       java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         status_ = b;
         return b;
       } else {
@@ -11595,7 +11620,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getAddressBytes());
@@ -11614,11 +11639,11 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getAddressBytes());
+                .computeBytesSize(1, getAddressBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getStatusBytes());
+                .computeBytesSize(2, getStatusBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11628,60 +11653,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.AddressStatus parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -11694,7 +11719,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -11702,19 +11727,19 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.AddressStatus}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.AddressStatus)
-        com.coinomi.core.protos.Protos.AddressStatusOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.AddressStatus)
+            com.coinomi.core.protos.Protos.AddressStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_AddressStatus_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.AddressStatus.class, com.coinomi.core.protos.Protos.AddressStatus.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.AddressStatus.class, com.coinomi.core.protos.Protos.AddressStatus.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.AddressStatus.newBuilder()
@@ -11723,7 +11748,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -11749,7 +11774,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_AddressStatus_descriptor;
       }
 
@@ -11809,20 +11834,20 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasAddress()) {
-          
+
           return false;
         }
         if (!hasStatus()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.AddressStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -11860,7 +11885,7 @@ public final class Protos {
         java.lang.Object ref = address_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             address_ = s;
@@ -11878,12 +11903,12 @@ public final class Protos {
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getAddressBytes() {
+      getAddressBytes() {
         java.lang.Object ref = address_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           address_ = b;
           return b;
         } else {
@@ -11898,11 +11923,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setAddress(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         address_ = value;
         onChanged();
         return this;
@@ -11928,11 +11953,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         address_ = value;
         onChanged();
         return this;
@@ -11960,7 +11985,7 @@ public final class Protos {
         java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             status_ = s;
@@ -11978,12 +12003,12 @@ public final class Protos {
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getStatusBytes() {
+      getStatusBytes() {
         java.lang.Object ref = status_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           status_ = b;
           return b;
         } else {
@@ -11998,11 +12023,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setStatus(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         status_ = value;
         onChanged();
         return this;
@@ -12028,11 +12053,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         status_ = value;
         onChanged();
         return this;
@@ -12050,8 +12075,8 @@ public final class Protos {
   }
 
   public interface WalletPocketOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.WalletPocket)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.WalletPocket)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required string network_identifier = 1;</code>
@@ -12077,7 +12102,7 @@ public final class Protos {
      * </pre>
      */
     com.google.protobuf.ByteString
-        getNetworkIdentifierBytes();
+    getNetworkIdentifierBytes();
 
     /**
      * <code>optional string description = 2;</code>
@@ -12103,13 +12128,13 @@ public final class Protos {
      * </pre>
      */
     com.google.protobuf.ByteString
-        getDescriptionBytes();
+    getDescriptionBytes();
 
     /**
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.Key> 
-        getKeyList();
+    java.util.List<com.coinomi.core.protos.Protos.Key>
+    getKeyList();
     /**
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
@@ -12121,13 +12146,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder> 
-        getKeyOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder>
+    getKeyOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
     com.coinomi.core.protos.Protos.KeyOrBuilder getKeyOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>optional bytes last_seen_block_hash = 4;</code>
@@ -12175,8 +12200,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.Transaction> 
-        getTransactionList();
+    java.util.List<com.coinomi.core.protos.Protos.Transaction>
+    getTransactionList();
     /**
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
@@ -12188,19 +12213,19 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder> 
-        getTransactionOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder>
+    getTransactionOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
     com.coinomi.core.protos.Protos.TransactionOrBuilder getTransactionOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.AddressStatus> 
-        getAddressStatusList();
+    java.util.List<com.coinomi.core.protos.Protos.AddressStatus>
+    getAddressStatusList();
     /**
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
@@ -12212,13 +12237,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder> 
-        getAddressStatusOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder>
+    getAddressStatusOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
     com.coinomi.core.protos.Protos.AddressStatusOrBuilder getAddressStatusOrBuilder(
-        int index);
+            int index);
 
     /**
      * <code>optional string id = 9;</code>
@@ -12232,13 +12257,13 @@ public final class Protos {
      * <code>optional string id = 9;</code>
      */
     com.google.protobuf.ByteString
-        getIdBytes();
+    getIdBytes();
 
     /**
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.UnspentOutput> 
-        getUnspentOutputList();
+    java.util.List<com.coinomi.core.protos.Protos.UnspentOutput>
+    getUnspentOutputList();
     /**
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
@@ -12250,13 +12275,13 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> 
-        getUnspentOutputOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>
+    getUnspentOutputOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
     com.coinomi.core.protos.Protos.UnspentOutputOrBuilder getUnspentOutputOrBuilder(
-        int index);
+            int index);
   }
   /**
    * Protobuf type {@code com.coinomi.core.protos.WalletPocket}
@@ -12266,9 +12291,9 @@ public final class Protos {
    * </pre>
    */
   public static final class WalletPocket extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.WalletPocket)
-      WalletPocketOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.WalletPocket)
+          WalletPocketOrBuilder {
     // Use WalletPocket.newBuilder() to construct.
     private WalletPocket(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -12288,17 +12313,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private WalletPocket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -12309,7 +12334,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -12385,7 +12410,7 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           key_ = java.util.Collections.unmodifiableList(key_);
@@ -12404,26 +12429,26 @@ public final class Protos {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_WalletPocket_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_WalletPocket_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.WalletPocket.class, com.coinomi.core.protos.Protos.WalletPocket.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.WalletPocket.class, com.coinomi.core.protos.Protos.WalletPocket.Builder.class);
     }
 
     public static com.google.protobuf.Parser<WalletPocket> PARSER =
-        new com.google.protobuf.AbstractParser<WalletPocket>() {
-      public WalletPocket parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WalletPocket(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<WalletPocket>() {
+              public WalletPocket parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new WalletPocket(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<WalletPocket> getParserForType() {
@@ -12455,8 +12480,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           networkIdentifier_ = s;
@@ -12472,12 +12497,12 @@ public final class Protos {
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getNetworkIdentifierBytes() {
+    getNetworkIdentifierBytes() {
       java.lang.Object ref = networkIdentifier_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         networkIdentifier_ = b;
         return b;
       } else {
@@ -12509,8 +12534,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           description_ = s;
@@ -12526,12 +12551,12 @@ public final class Protos {
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -12550,8 +12575,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder> 
-        getKeyOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder>
+    getKeyOrBuilderList() {
       return key_;
     }
     /**
@@ -12570,7 +12595,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
      */
     public com.coinomi.core.protos.Protos.KeyOrBuilder getKeyOrBuilder(
-        int index) {
+            int index) {
       return key_.get(index);
     }
 
@@ -12646,8 +12671,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder> 
-        getTransactionOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder>
+    getTransactionOrBuilderList() {
       return transaction_;
     }
     /**
@@ -12666,7 +12691,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
      */
     public com.coinomi.core.protos.Protos.TransactionOrBuilder getTransactionOrBuilder(
-        int index) {
+            int index) {
       return transaction_.get(index);
     }
 
@@ -12681,8 +12706,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder> 
-        getAddressStatusOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder>
+    getAddressStatusOrBuilderList() {
       return addressStatus_;
     }
     /**
@@ -12701,7 +12726,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
      */
     public com.coinomi.core.protos.Protos.AddressStatusOrBuilder getAddressStatusOrBuilder(
-        int index) {
+            int index) {
       return addressStatus_.get(index);
     }
 
@@ -12721,8 +12746,8 @@ public final class Protos {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           id_ = s;
@@ -12734,12 +12759,12 @@ public final class Protos {
      * <code>optional string id = 9;</code>
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
+    getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -12758,8 +12783,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> 
-        getUnspentOutputOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>
+    getUnspentOutputOrBuilderList() {
       return unspentOutput_;
     }
     /**
@@ -12778,7 +12803,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
      */
     public com.coinomi.core.protos.Protos.UnspentOutputOrBuilder getUnspentOutputOrBuilder(
-        int index) {
+            int index) {
       return unspentOutput_.get(index);
     }
 
@@ -12833,7 +12858,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getNetworkIdentifierBytes());
@@ -12876,43 +12901,43 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getNetworkIdentifierBytes());
+                .computeBytesSize(1, getNetworkIdentifierBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getDescriptionBytes());
+                .computeBytesSize(2, getDescriptionBytes());
       }
       for (int i = 0; i < key_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, key_.get(i));
+                .computeMessageSize(3, key_.get(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, lastSeenBlockHash_);
+                .computeBytesSize(4, lastSeenBlockHash_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, lastSeenBlockHeight_);
+                .computeUInt32Size(5, lastSeenBlockHeight_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, lastSeenBlockTimeSecs_);
+                .computeInt64Size(6, lastSeenBlockTimeSecs_);
       }
       for (int i = 0; i < transaction_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, transaction_.get(i));
+                .computeMessageSize(7, transaction_.get(i));
       }
       for (int i = 0; i < addressStatus_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, addressStatus_.get(i));
+                .computeMessageSize(8, addressStatus_.get(i));
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, getIdBytes());
+                .computeBytesSize(9, getIdBytes());
       }
       for (int i = 0; i < unspentOutput_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, unspentOutput_.get(i));
+                .computeMessageSize(10, unspentOutput_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -12922,60 +12947,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.WalletPocket parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -12988,7 +13013,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -13000,19 +13025,19 @@ public final class Protos {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.WalletPocket)
-        com.coinomi.core.protos.Protos.WalletPocketOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.WalletPocket)
+            com.coinomi.core.protos.Protos.WalletPocketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_WalletPocket_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_WalletPocket_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.WalletPocket.class, com.coinomi.core.protos.Protos.WalletPocket.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.WalletPocket.class, com.coinomi.core.protos.Protos.WalletPocket.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.WalletPocket.newBuilder()
@@ -13021,7 +13046,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -13083,7 +13108,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_WalletPocket_descriptor;
       }
 
@@ -13207,9 +13232,9 @@ public final class Protos {
               keyBuilder_ = null;
               key_ = other.key_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              keyBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getKeyFieldBuilder() : null;
+              keyBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getKeyFieldBuilder() : null;
             } else {
               keyBuilder_.addAllMessages(other.key_);
             }
@@ -13242,9 +13267,9 @@ public final class Protos {
               transactionBuilder_ = null;
               transaction_ = other.transaction_;
               bitField0_ = (bitField0_ & ~0x00000040);
-              transactionBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getTransactionFieldBuilder() : null;
+              transactionBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getTransactionFieldBuilder() : null;
             } else {
               transactionBuilder_.addAllMessages(other.transaction_);
             }
@@ -13268,9 +13293,9 @@ public final class Protos {
               addressStatusBuilder_ = null;
               addressStatus_ = other.addressStatus_;
               bitField0_ = (bitField0_ & ~0x00000080);
-              addressStatusBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getAddressStatusFieldBuilder() : null;
+              addressStatusBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getAddressStatusFieldBuilder() : null;
             } else {
               addressStatusBuilder_.addAllMessages(other.addressStatus_);
             }
@@ -13299,9 +13324,9 @@ public final class Protos {
               unspentOutputBuilder_ = null;
               unspentOutput_ = other.unspentOutput_;
               bitField0_ = (bitField0_ & ~0x00000200);
-              unspentOutputBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getUnspentOutputFieldBuilder() : null;
+              unspentOutputBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getUnspentOutputFieldBuilder() : null;
             } else {
               unspentOutputBuilder_.addAllMessages(other.unspentOutput_);
             }
@@ -13313,30 +13338,30 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasNetworkIdentifier()) {
-          
+
           return false;
         }
         for (int i = 0; i < getKeyCount(); i++) {
           if (!getKey(i).isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getTransactionCount(); i++) {
           if (!getTransaction(i).isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getAddressStatusCount(); i++) {
           if (!getAddressStatus(i).isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getUnspentOutputCount(); i++) {
           if (!getUnspentOutput(i).isInitialized()) {
-            
+
             return false;
           }
         }
@@ -13344,9 +13369,9 @@ public final class Protos {
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.WalletPocket parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -13384,7 +13409,7 @@ public final class Protos {
         java.lang.Object ref = networkIdentifier_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             networkIdentifier_ = s;
@@ -13402,12 +13427,12 @@ public final class Protos {
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getNetworkIdentifierBytes() {
+      getNetworkIdentifierBytes() {
         java.lang.Object ref = networkIdentifier_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           networkIdentifier_ = b;
           return b;
         } else {
@@ -13422,11 +13447,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setNetworkIdentifier(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         networkIdentifier_ = value;
         onChanged();
         return this;
@@ -13452,11 +13477,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setNetworkIdentifierBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         networkIdentifier_ = value;
         onChanged();
         return this;
@@ -13484,7 +13509,7 @@ public final class Protos {
         java.lang.Object ref = description_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             description_ = s;
@@ -13502,12 +13527,12 @@ public final class Protos {
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getDescriptionBytes() {
+      getDescriptionBytes() {
         java.lang.Object ref = description_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           description_ = b;
           return b;
         } else {
@@ -13522,11 +13547,11 @@ public final class Protos {
        * </pre>
        */
       public Builder setDescription(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         description_ = value;
         onChanged();
         return this;
@@ -13552,27 +13577,27 @@ public final class Protos {
        * </pre>
        */
       public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         description_ = value;
         onChanged();
         return this;
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.Key> key_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureKeyIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           key_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.Key>(key_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> keyBuilder_;
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> keyBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
@@ -13608,7 +13633,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder setKey(
-          int index, com.coinomi.core.protos.Protos.Key value) {
+              int index, com.coinomi.core.protos.Protos.Key value) {
         if (keyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13625,7 +13650,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder setKey(
-          int index, com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
         if (keyBuilder_ == null) {
           ensureKeyIsMutable();
           key_.set(index, builderForValue.build());
@@ -13655,7 +13680,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder addKey(
-          int index, com.coinomi.core.protos.Protos.Key value) {
+              int index, com.coinomi.core.protos.Protos.Key value) {
         if (keyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13672,7 +13697,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder addKey(
-          com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
         if (keyBuilder_ == null) {
           ensureKeyIsMutable();
           key_.add(builderForValue.build());
@@ -13686,7 +13711,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder addKey(
-          int index, com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
         if (keyBuilder_ == null) {
           ensureKeyIsMutable();
           key_.add(index, builderForValue.build());
@@ -13700,11 +13725,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public Builder addAllKey(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.Key> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.Key> values) {
         if (keyBuilder_ == null) {
           ensureKeyIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, key_);
+                  values, key_);
           onChanged();
         } else {
           keyBuilder_.addAllMessages(values);
@@ -13741,14 +13766,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public com.coinomi.core.protos.Protos.Key.Builder getKeyBuilder(
-          int index) {
+              int index) {
         return getKeyFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public com.coinomi.core.protos.Protos.KeyOrBuilder getKeyOrBuilder(
-          int index) {
+              int index) {
         if (keyBuilder_ == null) {
           return key_.get(index);  } else {
           return keyBuilder_.getMessageOrBuilder(index);
@@ -13757,8 +13782,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder> 
-           getKeyOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.KeyOrBuilder>
+      getKeyOrBuilderList() {
         if (keyBuilder_ != null) {
           return keyBuilder_.getMessageOrBuilderList();
         } else {
@@ -13770,29 +13795,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.Key.Builder addKeyBuilder() {
         return getKeyFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.Key.getDefaultInstance());
+                com.coinomi.core.protos.Protos.Key.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
       public com.coinomi.core.protos.Protos.Key.Builder addKeyBuilder(
-          int index) {
+              int index) {
         return getKeyFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.Key.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.Key.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Key key = 3;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.Key.Builder> 
-           getKeyBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.Key.Builder>
+      getKeyBuilderList() {
         return getKeyFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> 
-          getKeyFieldBuilder() {
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>
+      getKeyFieldBuilder() {
         if (keyBuilder_ == null) {
           keyBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
+                  com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
                   key_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -13832,9 +13857,9 @@ public final class Protos {
        */
       public Builder setLastSeenBlockHash(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         lastSeenBlockHash_ = value;
         onChanged();
         return this;
@@ -13934,16 +13959,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.Transaction> transaction_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureTransactionIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           transaction_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.Transaction>(transaction_);
           bitField0_ |= 0x00000040;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder> transactionBuilder_;
+              com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder> transactionBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
@@ -13979,7 +14004,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder setTransaction(
-          int index, com.coinomi.core.protos.Protos.Transaction value) {
+              int index, com.coinomi.core.protos.Protos.Transaction value) {
         if (transactionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13996,7 +14021,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder setTransaction(
-          int index, com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
         if (transactionBuilder_ == null) {
           ensureTransactionIsMutable();
           transaction_.set(index, builderForValue.build());
@@ -14026,7 +14051,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder addTransaction(
-          int index, com.coinomi.core.protos.Protos.Transaction value) {
+              int index, com.coinomi.core.protos.Protos.Transaction value) {
         if (transactionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14043,7 +14068,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder addTransaction(
-          com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
         if (transactionBuilder_ == null) {
           ensureTransactionIsMutable();
           transaction_.add(builderForValue.build());
@@ -14057,7 +14082,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder addTransaction(
-          int index, com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.Transaction.Builder builderForValue) {
         if (transactionBuilder_ == null) {
           ensureTransactionIsMutable();
           transaction_.add(index, builderForValue.build());
@@ -14071,11 +14096,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public Builder addAllTransaction(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.Transaction> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.Transaction> values) {
         if (transactionBuilder_ == null) {
           ensureTransactionIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, transaction_);
+                  values, transaction_);
           onChanged();
         } else {
           transactionBuilder_.addAllMessages(values);
@@ -14112,14 +14137,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public com.coinomi.core.protos.Protos.Transaction.Builder getTransactionBuilder(
-          int index) {
+              int index) {
         return getTransactionFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public com.coinomi.core.protos.Protos.TransactionOrBuilder getTransactionOrBuilder(
-          int index) {
+              int index) {
         if (transactionBuilder_ == null) {
           return transaction_.get(index);  } else {
           return transactionBuilder_.getMessageOrBuilder(index);
@@ -14128,8 +14153,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder> 
-           getTransactionOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.TransactionOrBuilder>
+      getTransactionOrBuilderList() {
         if (transactionBuilder_ != null) {
           return transactionBuilder_.getMessageOrBuilderList();
         } else {
@@ -14141,29 +14166,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.Transaction.Builder addTransactionBuilder() {
         return getTransactionFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.Transaction.getDefaultInstance());
+                com.coinomi.core.protos.Protos.Transaction.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
       public com.coinomi.core.protos.Protos.Transaction.Builder addTransactionBuilder(
-          int index) {
+              int index) {
         return getTransactionFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.Transaction.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.Transaction.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.Transaction transaction = 7;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.Transaction.Builder> 
-           getTransactionBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.Transaction.Builder>
+      getTransactionBuilderList() {
         return getTransactionFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder> 
-          getTransactionFieldBuilder() {
+              com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder>
+      getTransactionFieldBuilder() {
         if (transactionBuilder_ == null) {
           transactionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder>(
+                  com.coinomi.core.protos.Protos.Transaction, com.coinomi.core.protos.Protos.Transaction.Builder, com.coinomi.core.protos.Protos.TransactionOrBuilder>(
                   transaction_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -14174,16 +14199,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.AddressStatus> addressStatus_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureAddressStatusIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           addressStatus_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.AddressStatus>(addressStatus_);
           bitField0_ |= 0x00000080;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder> addressStatusBuilder_;
+              com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder> addressStatusBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
@@ -14219,7 +14244,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder setAddressStatus(
-          int index, com.coinomi.core.protos.Protos.AddressStatus value) {
+              int index, com.coinomi.core.protos.Protos.AddressStatus value) {
         if (addressStatusBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14236,7 +14261,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder setAddressStatus(
-          int index, com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
         if (addressStatusBuilder_ == null) {
           ensureAddressStatusIsMutable();
           addressStatus_.set(index, builderForValue.build());
@@ -14266,7 +14291,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder addAddressStatus(
-          int index, com.coinomi.core.protos.Protos.AddressStatus value) {
+              int index, com.coinomi.core.protos.Protos.AddressStatus value) {
         if (addressStatusBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14283,7 +14308,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder addAddressStatus(
-          com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
         if (addressStatusBuilder_ == null) {
           ensureAddressStatusIsMutable();
           addressStatus_.add(builderForValue.build());
@@ -14297,7 +14322,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder addAddressStatus(
-          int index, com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.AddressStatus.Builder builderForValue) {
         if (addressStatusBuilder_ == null) {
           ensureAddressStatusIsMutable();
           addressStatus_.add(index, builderForValue.build());
@@ -14311,11 +14336,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public Builder addAllAddressStatus(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.AddressStatus> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.AddressStatus> values) {
         if (addressStatusBuilder_ == null) {
           ensureAddressStatusIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, addressStatus_);
+                  values, addressStatus_);
           onChanged();
         } else {
           addressStatusBuilder_.addAllMessages(values);
@@ -14352,14 +14377,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public com.coinomi.core.protos.Protos.AddressStatus.Builder getAddressStatusBuilder(
-          int index) {
+              int index) {
         return getAddressStatusFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public com.coinomi.core.protos.Protos.AddressStatusOrBuilder getAddressStatusOrBuilder(
-          int index) {
+              int index) {
         if (addressStatusBuilder_ == null) {
           return addressStatus_.get(index);  } else {
           return addressStatusBuilder_.getMessageOrBuilder(index);
@@ -14368,8 +14393,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder> 
-           getAddressStatusOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.AddressStatusOrBuilder>
+      getAddressStatusOrBuilderList() {
         if (addressStatusBuilder_ != null) {
           return addressStatusBuilder_.getMessageOrBuilderList();
         } else {
@@ -14381,29 +14406,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.AddressStatus.Builder addAddressStatusBuilder() {
         return getAddressStatusFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.AddressStatus.getDefaultInstance());
+                com.coinomi.core.protos.Protos.AddressStatus.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
       public com.coinomi.core.protos.Protos.AddressStatus.Builder addAddressStatusBuilder(
-          int index) {
+              int index) {
         return getAddressStatusFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.AddressStatus.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.AddressStatus.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.AddressStatus address_status = 8;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.AddressStatus.Builder> 
-           getAddressStatusBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.AddressStatus.Builder>
+      getAddressStatusBuilderList() {
         return getAddressStatusFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder> 
-          getAddressStatusFieldBuilder() {
+              com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder>
+      getAddressStatusFieldBuilder() {
         if (addressStatusBuilder_ == null) {
           addressStatusBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder>(
+                  com.coinomi.core.protos.Protos.AddressStatus, com.coinomi.core.protos.Protos.AddressStatus.Builder, com.coinomi.core.protos.Protos.AddressStatusOrBuilder>(
                   addressStatus_,
                   ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
@@ -14427,7 +14452,7 @@ public final class Protos {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             id_ = s;
@@ -14441,12 +14466,12 @@ public final class Protos {
        * <code>optional string id = 9;</code>
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
+      getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           id_ = b;
           return b;
         } else {
@@ -14457,11 +14482,11 @@ public final class Protos {
        * <code>optional string id = 9;</code>
        */
       public Builder setId(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
         id_ = value;
         onChanged();
         return this;
@@ -14479,27 +14504,27 @@ public final class Protos {
        * <code>optional string id = 9;</code>
        */
       public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
         id_ = value;
         onChanged();
         return this;
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.UnspentOutput> unspentOutput_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensureUnspentOutputIsMutable() {
         if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           unspentOutput_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.UnspentOutput>(unspentOutput_);
           bitField0_ |= 0x00000200;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> unspentOutputBuilder_;
+              com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> unspentOutputBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
@@ -14535,7 +14560,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder setUnspentOutput(
-          int index, com.coinomi.core.protos.Protos.UnspentOutput value) {
+              int index, com.coinomi.core.protos.Protos.UnspentOutput value) {
         if (unspentOutputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14552,7 +14577,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder setUnspentOutput(
-          int index, com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
         if (unspentOutputBuilder_ == null) {
           ensureUnspentOutputIsMutable();
           unspentOutput_.set(index, builderForValue.build());
@@ -14582,7 +14607,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder addUnspentOutput(
-          int index, com.coinomi.core.protos.Protos.UnspentOutput value) {
+              int index, com.coinomi.core.protos.Protos.UnspentOutput value) {
         if (unspentOutputBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -14599,7 +14624,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder addUnspentOutput(
-          com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
         if (unspentOutputBuilder_ == null) {
           ensureUnspentOutputIsMutable();
           unspentOutput_.add(builderForValue.build());
@@ -14613,7 +14638,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder addUnspentOutput(
-          int index, com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.UnspentOutput.Builder builderForValue) {
         if (unspentOutputBuilder_ == null) {
           ensureUnspentOutputIsMutable();
           unspentOutput_.add(index, builderForValue.build());
@@ -14627,11 +14652,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public Builder addAllUnspentOutput(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.UnspentOutput> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.UnspentOutput> values) {
         if (unspentOutputBuilder_ == null) {
           ensureUnspentOutputIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unspentOutput_);
+                  values, unspentOutput_);
           onChanged();
         } else {
           unspentOutputBuilder_.addAllMessages(values);
@@ -14668,14 +14693,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public com.coinomi.core.protos.Protos.UnspentOutput.Builder getUnspentOutputBuilder(
-          int index) {
+              int index) {
         return getUnspentOutputFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public com.coinomi.core.protos.Protos.UnspentOutputOrBuilder getUnspentOutputOrBuilder(
-          int index) {
+              int index) {
         if (unspentOutputBuilder_ == null) {
           return unspentOutput_.get(index);  } else {
           return unspentOutputBuilder_.getMessageOrBuilder(index);
@@ -14684,8 +14709,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> 
-           getUnspentOutputOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>
+      getUnspentOutputOrBuilderList() {
         if (unspentOutputBuilder_ != null) {
           return unspentOutputBuilder_.getMessageOrBuilderList();
         } else {
@@ -14697,29 +14722,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.UnspentOutput.Builder addUnspentOutputBuilder() {
         return getUnspentOutputFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.UnspentOutput.getDefaultInstance());
+                com.coinomi.core.protos.Protos.UnspentOutput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
       public com.coinomi.core.protos.Protos.UnspentOutput.Builder addUnspentOutputBuilder(
-          int index) {
+              int index) {
         return getUnspentOutputFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.UnspentOutput.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.UnspentOutput.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.UnspentOutput unspent_output = 10;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.UnspentOutput.Builder> 
-           getUnspentOutputBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.UnspentOutput.Builder>
+      getUnspentOutputBuilderList() {
         return getUnspentOutputFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder> 
-          getUnspentOutputFieldBuilder() {
+              com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>
+      getUnspentOutputFieldBuilder() {
         if (unspentOutputBuilder_ == null) {
           unspentOutputBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>(
+                  com.coinomi.core.protos.Protos.UnspentOutput, com.coinomi.core.protos.Protos.UnspentOutput.Builder, com.coinomi.core.protos.Protos.UnspentOutputOrBuilder>(
                   unspentOutput_,
                   ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
@@ -14741,8 +14766,8 @@ public final class Protos {
   }
 
   public interface ScryptParametersOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.ScryptParameters)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.ScryptParameters)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>required bytes salt = 1;</code>
@@ -14824,9 +14849,9 @@ public final class Protos {
    * </pre>
    */
   public static final class ScryptParameters extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.ScryptParameters)
-      ScryptParametersOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.ScryptParameters)
+          ScryptParametersOrBuilder {
     // Use ScryptParameters.newBuilder() to construct.
     private ScryptParameters(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -14846,17 +14871,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private ScryptParameters(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -14867,7 +14892,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -14898,33 +14923,33 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_ScryptParameters_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_ScryptParameters_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.ScryptParameters.class, com.coinomi.core.protos.Protos.ScryptParameters.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.ScryptParameters.class, com.coinomi.core.protos.Protos.ScryptParameters.Builder.class);
     }
 
     public static com.google.protobuf.Parser<ScryptParameters> PARSER =
-        new com.google.protobuf.AbstractParser<ScryptParameters>() {
-      public ScryptParameters parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScryptParameters(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<ScryptParameters>() {
+              public ScryptParameters parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ScryptParameters(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<ScryptParameters> getParserForType() {
@@ -15045,7 +15070,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, salt_);
@@ -15070,19 +15095,19 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, salt_);
+                .computeBytesSize(1, salt_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, n_);
+                .computeInt64Size(2, n_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, r_);
+                .computeInt32Size(3, r_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, p_);
+                .computeInt32Size(4, p_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -15092,60 +15117,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.ScryptParameters parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -15158,7 +15183,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -15174,19 +15199,19 @@ public final class Protos {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.ScryptParameters)
-        com.coinomi.core.protos.Protos.ScryptParametersOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.ScryptParameters)
+            com.coinomi.core.protos.Protos.ScryptParametersOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_ScryptParameters_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_ScryptParameters_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.ScryptParameters.class, com.coinomi.core.protos.Protos.ScryptParameters.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.ScryptParameters.class, com.coinomi.core.protos.Protos.ScryptParameters.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.ScryptParameters.newBuilder()
@@ -15195,7 +15220,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -15225,7 +15250,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_ScryptParameters_descriptor;
       }
 
@@ -15295,16 +15320,16 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasSalt()) {
-          
+
           return false;
         }
         return true;
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.ScryptParameters parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -15350,9 +15375,9 @@ public final class Protos {
        */
       public Builder setSalt(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         salt_ = value;
         onChanged();
         return this;
@@ -15527,8 +15552,8 @@ public final class Protos {
   }
 
   public interface WalletOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Wallet)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:com.coinomi.core.protos.Wallet)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional int32 version = 1 [default = 1];</code>
@@ -15609,8 +15634,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
-    java.util.List<com.coinomi.core.protos.Protos.WalletPocket> 
-        getPocketsList();
+    java.util.List<com.coinomi.core.protos.Protos.WalletPocket>
+    getPocketsList();
     /**
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
@@ -15622,25 +15647,25 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
-    java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder> 
-        getPocketsOrBuilderList();
+    java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder>
+    getPocketsOrBuilderList();
     /**
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
     com.coinomi.core.protos.Protos.WalletPocketOrBuilder getPocketsOrBuilder(
-        int index);
+            int index);
   }
   /**
    * Protobuf type {@code com.coinomi.core.protos.Wallet}
    *
    * <pre>
-   ** A bitcoin wallet 
+   ** A bitcoin wallet
    * </pre>
    */
   public static final class Wallet extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Wallet)
-      WalletOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:com.coinomi.core.protos.Wallet)
+          WalletOrBuilder {
     // Use Wallet.newBuilder() to construct.
     private Wallet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -15660,17 +15685,17 @@ public final class Protos {
     private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private Wallet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -15681,7 +15706,7 @@ public final class Protos {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -15760,7 +15785,7 @@ public final class Protos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+                e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           pockets_ = java.util.Collections.unmodifiableList(pockets_);
@@ -15770,26 +15795,26 @@ public final class Protos {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Wallet_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Wallet_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.coinomi.core.protos.Protos.Wallet.class, com.coinomi.core.protos.Protos.Wallet.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.coinomi.core.protos.Protos.Wallet.class, com.coinomi.core.protos.Protos.Wallet.Builder.class);
     }
 
     public static com.google.protobuf.Parser<Wallet> PARSER =
-        new com.google.protobuf.AbstractParser<Wallet>() {
-      public Wallet parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Wallet(input, extensionRegistry);
-      }
-    };
+            new com.google.protobuf.AbstractParser<Wallet>() {
+              public Wallet parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Wallet(input, extensionRegistry);
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<Wallet> getParserForType() {
@@ -15808,7 +15833,7 @@ public final class Protos {
      * </pre>
      */
     public enum EncryptionType
-        implements com.google.protobuf.ProtocolMessageEnum {
+            implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>UNENCRYPTED = 1;</code>
        *
@@ -15873,37 +15898,37 @@ public final class Protos {
       }
 
       public static com.google.protobuf.Internal.EnumLiteMap<EncryptionType>
-          internalGetValueMap() {
+      internalGetValueMap() {
         return internalValueMap;
       }
       private static com.google.protobuf.Internal.EnumLiteMap<EncryptionType>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<EncryptionType>() {
-              public EncryptionType findValueByNumber(int number) {
-                return EncryptionType.valueOf(number);
-              }
-            };
+              internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EncryptionType>() {
+                public EncryptionType findValueByNumber(int number) {
+                  return EncryptionType.valueOf(number);
+                }
+              };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      getValueDescriptor() {
         return getDescriptor().getValues().get(index);
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.Wallet.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final EncryptionType[] VALUES = values();
 
       public static EncryptionType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+                  "EnumValueDescriptor is not for this type.");
         }
         return VALUES[desc.getIndex()];
       }
@@ -16049,8 +16074,8 @@ public final class Protos {
     /**
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
-    public java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder> 
-        getPocketsOrBuilderList() {
+    public java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder>
+    getPocketsOrBuilderList() {
       return pockets_;
     }
     /**
@@ -16069,7 +16094,7 @@ public final class Protos {
      * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
      */
     public com.coinomi.core.protos.Protos.WalletPocketOrBuilder getPocketsOrBuilder(
-        int index) {
+            int index) {
       return pockets_.get(index);
     }
 
@@ -16119,7 +16144,7 @@ public final class Protos {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, version_);
@@ -16153,31 +16178,31 @@ public final class Protos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, version_);
+                .computeInt32Size(1, version_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, seed_);
+                .computeMessageSize(2, seed_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, masterKey_);
+                .computeMessageSize(3, masterKey_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, encryptionType_.getNumber());
+                .computeEnumSize(4, encryptionType_.getNumber());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, encryptionParameters_);
+                .computeMessageSize(5, encryptionParameters_);
       }
       for (int i = 0; i < pockets_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, pockets_.get(i));
+                .computeMessageSize(6, pockets_.get(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, seedPasswordProtected_);
+                .computeBoolSize(7, seedPasswordProtected_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -16187,60 +16212,60 @@ public final class Protos {
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+            throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
     public static com.coinomi.core.protos.Protos.Wallet parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
@@ -16253,7 +16278,7 @@ public final class Protos {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -16261,23 +16286,23 @@ public final class Protos {
      * Protobuf type {@code com.coinomi.core.protos.Wallet}
      *
      * <pre>
-     ** A bitcoin wallet 
+     ** A bitcoin wallet
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Wallet)
-        com.coinomi.core.protos.Protos.WalletOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.coinomi.core.protos.Wallet)
+            com.coinomi.core.protos.Protos.WalletOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Wallet_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Wallet_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.coinomi.core.protos.Protos.Wallet.class, com.coinomi.core.protos.Protos.Wallet.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.coinomi.core.protos.Protos.Wallet.class, com.coinomi.core.protos.Protos.Wallet.Builder.class);
       }
 
       // Construct using com.coinomi.core.protos.Protos.Wallet.newBuilder()
@@ -16286,7 +16311,7 @@ public final class Protos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -16342,7 +16367,7 @@ public final class Protos {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.coinomi.core.protos.Protos.internal_static_com_coinomi_core_protos_Wallet_descriptor;
       }
 
@@ -16459,9 +16484,9 @@ public final class Protos {
               pocketsBuilder_ = null;
               pockets_ = other.pockets_;
               bitField0_ = (bitField0_ & ~0x00000040);
-              pocketsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getPocketsFieldBuilder() : null;
+              pocketsBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                              getPocketsFieldBuilder() : null;
             } else {
               pocketsBuilder_.addAllMessages(other.pockets_);
             }
@@ -16473,28 +16498,28 @@ public final class Protos {
 
       public final boolean isInitialized() {
         if (!hasMasterKey()) {
-          
+
           return false;
         }
         if (hasSeed()) {
           if (!getSeed().isInitialized()) {
-            
+
             return false;
           }
         }
         if (!getMasterKey().isInitialized()) {
-          
+
           return false;
         }
         if (hasEncryptionParameters()) {
           if (!getEncryptionParameters().isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getPocketsCount(); i++) {
           if (!getPockets(i).isInitialized()) {
-            
+
             return false;
           }
         }
@@ -16502,9 +16527,9 @@ public final class Protos {
       }
 
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.coinomi.core.protos.Protos.Wallet parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -16574,7 +16599,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.Key seed_ = com.coinomi.core.protos.Protos.Key.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> seedBuilder_;
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> seedBuilder_;
       /**
        * <code>optional .com.coinomi.core.protos.Key seed = 2;</code>
        */
@@ -16611,7 +16636,7 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.Key seed = 2;</code>
        */
       public Builder setSeed(
-          com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
         if (seedBuilder_ == null) {
           seed_ = builderForValue.build();
           onChanged();
@@ -16627,9 +16652,9 @@ public final class Protos {
       public Builder mergeSeed(com.coinomi.core.protos.Protos.Key value) {
         if (seedBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              seed_ != com.coinomi.core.protos.Protos.Key.getDefaultInstance()) {
+                  seed_ != com.coinomi.core.protos.Protos.Key.getDefaultInstance()) {
             seed_ =
-              com.coinomi.core.protos.Protos.Key.newBuilder(seed_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.Key.newBuilder(seed_).mergeFrom(value).buildPartial();
           } else {
             seed_ = value;
           }
@@ -16675,11 +16700,11 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.Key seed = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> 
-          getSeedFieldBuilder() {
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>
+      getSeedFieldBuilder() {
         if (seedBuilder_ == null) {
           seedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
+                  com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
                   getSeed(),
                   getParentForChildren(),
                   isClean());
@@ -16722,7 +16747,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.Key masterKey_ = com.coinomi.core.protos.Protos.Key.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> masterKeyBuilder_;
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> masterKeyBuilder_;
       /**
        * <code>required .com.coinomi.core.protos.Key master_key = 3;</code>
        */
@@ -16759,7 +16784,7 @@ public final class Protos {
        * <code>required .com.coinomi.core.protos.Key master_key = 3;</code>
        */
       public Builder setMasterKey(
-          com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.Key.Builder builderForValue) {
         if (masterKeyBuilder_ == null) {
           masterKey_ = builderForValue.build();
           onChanged();
@@ -16775,9 +16800,9 @@ public final class Protos {
       public Builder mergeMasterKey(com.coinomi.core.protos.Protos.Key value) {
         if (masterKeyBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              masterKey_ != com.coinomi.core.protos.Protos.Key.getDefaultInstance()) {
+                  masterKey_ != com.coinomi.core.protos.Protos.Key.getDefaultInstance()) {
             masterKey_ =
-              com.coinomi.core.protos.Protos.Key.newBuilder(masterKey_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.Key.newBuilder(masterKey_).mergeFrom(value).buildPartial();
           } else {
             masterKey_ = value;
           }
@@ -16823,11 +16848,11 @@ public final class Protos {
        * <code>required .com.coinomi.core.protos.Key master_key = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder> 
-          getMasterKeyFieldBuilder() {
+              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>
+      getMasterKeyFieldBuilder() {
         if (masterKeyBuilder_ == null) {
           masterKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
+                  com.coinomi.core.protos.Protos.Key, com.coinomi.core.protos.Protos.Key.Builder, com.coinomi.core.protos.Protos.KeyOrBuilder>(
                   getMasterKey(),
                   getParentForChildren(),
                   isClean());
@@ -16873,7 +16898,7 @@ public final class Protos {
 
       private com.coinomi.core.protos.Protos.ScryptParameters encryptionParameters_ = com.coinomi.core.protos.Protos.ScryptParameters.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder> encryptionParametersBuilder_;
+              com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder> encryptionParametersBuilder_;
       /**
        * <code>optional .com.coinomi.core.protos.ScryptParameters encryption_parameters = 5;</code>
        */
@@ -16910,7 +16935,7 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.ScryptParameters encryption_parameters = 5;</code>
        */
       public Builder setEncryptionParameters(
-          com.coinomi.core.protos.Protos.ScryptParameters.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.ScryptParameters.Builder builderForValue) {
         if (encryptionParametersBuilder_ == null) {
           encryptionParameters_ = builderForValue.build();
           onChanged();
@@ -16926,9 +16951,9 @@ public final class Protos {
       public Builder mergeEncryptionParameters(com.coinomi.core.protos.Protos.ScryptParameters value) {
         if (encryptionParametersBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              encryptionParameters_ != com.coinomi.core.protos.Protos.ScryptParameters.getDefaultInstance()) {
+                  encryptionParameters_ != com.coinomi.core.protos.Protos.ScryptParameters.getDefaultInstance()) {
             encryptionParameters_ =
-              com.coinomi.core.protos.Protos.ScryptParameters.newBuilder(encryptionParameters_).mergeFrom(value).buildPartial();
+                    com.coinomi.core.protos.Protos.ScryptParameters.newBuilder(encryptionParameters_).mergeFrom(value).buildPartial();
           } else {
             encryptionParameters_ = value;
           }
@@ -16974,11 +16999,11 @@ public final class Protos {
        * <code>optional .com.coinomi.core.protos.ScryptParameters encryption_parameters = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder> 
-          getEncryptionParametersFieldBuilder() {
+              com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder>
+      getEncryptionParametersFieldBuilder() {
         if (encryptionParametersBuilder_ == null) {
           encryptionParametersBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder>(
+                  com.coinomi.core.protos.Protos.ScryptParameters, com.coinomi.core.protos.Protos.ScryptParameters.Builder, com.coinomi.core.protos.Protos.ScryptParametersOrBuilder>(
                   getEncryptionParameters(),
                   getParentForChildren(),
                   isClean());
@@ -16988,16 +17013,16 @@ public final class Protos {
       }
 
       private java.util.List<com.coinomi.core.protos.Protos.WalletPocket> pockets_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
       private void ensurePocketsIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           pockets_ = new java.util.ArrayList<com.coinomi.core.protos.Protos.WalletPocket>(pockets_);
           bitField0_ |= 0x00000040;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder> pocketsBuilder_;
+              com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder> pocketsBuilder_;
 
       /**
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
@@ -17033,7 +17058,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder setPockets(
-          int index, com.coinomi.core.protos.Protos.WalletPocket value) {
+              int index, com.coinomi.core.protos.Protos.WalletPocket value) {
         if (pocketsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -17050,7 +17075,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder setPockets(
-          int index, com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
         if (pocketsBuilder_ == null) {
           ensurePocketsIsMutable();
           pockets_.set(index, builderForValue.build());
@@ -17080,7 +17105,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder addPockets(
-          int index, com.coinomi.core.protos.Protos.WalletPocket value) {
+              int index, com.coinomi.core.protos.Protos.WalletPocket value) {
         if (pocketsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -17097,7 +17122,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder addPockets(
-          com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
+              com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
         if (pocketsBuilder_ == null) {
           ensurePocketsIsMutable();
           pockets_.add(builderForValue.build());
@@ -17111,7 +17136,7 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder addPockets(
-          int index, com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
+              int index, com.coinomi.core.protos.Protos.WalletPocket.Builder builderForValue) {
         if (pocketsBuilder_ == null) {
           ensurePocketsIsMutable();
           pockets_.add(index, builderForValue.build());
@@ -17125,11 +17150,11 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public Builder addAllPockets(
-          java.lang.Iterable<? extends com.coinomi.core.protos.Protos.WalletPocket> values) {
+              java.lang.Iterable<? extends com.coinomi.core.protos.Protos.WalletPocket> values) {
         if (pocketsBuilder_ == null) {
           ensurePocketsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, pockets_);
+                  values, pockets_);
           onChanged();
         } else {
           pocketsBuilder_.addAllMessages(values);
@@ -17166,14 +17191,14 @@ public final class Protos {
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public com.coinomi.core.protos.Protos.WalletPocket.Builder getPocketsBuilder(
-          int index) {
+              int index) {
         return getPocketsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public com.coinomi.core.protos.Protos.WalletPocketOrBuilder getPocketsOrBuilder(
-          int index) {
+              int index) {
         if (pocketsBuilder_ == null) {
           return pockets_.get(index);  } else {
           return pocketsBuilder_.getMessageOrBuilder(index);
@@ -17182,8 +17207,8 @@ public final class Protos {
       /**
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
-      public java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder> 
-           getPocketsOrBuilderList() {
+      public java.util.List<? extends com.coinomi.core.protos.Protos.WalletPocketOrBuilder>
+      getPocketsOrBuilderList() {
         if (pocketsBuilder_ != null) {
           return pocketsBuilder_.getMessageOrBuilderList();
         } else {
@@ -17195,29 +17220,29 @@ public final class Protos {
        */
       public com.coinomi.core.protos.Protos.WalletPocket.Builder addPocketsBuilder() {
         return getPocketsFieldBuilder().addBuilder(
-            com.coinomi.core.protos.Protos.WalletPocket.getDefaultInstance());
+                com.coinomi.core.protos.Protos.WalletPocket.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
       public com.coinomi.core.protos.Protos.WalletPocket.Builder addPocketsBuilder(
-          int index) {
+              int index) {
         return getPocketsFieldBuilder().addBuilder(
-            index, com.coinomi.core.protos.Protos.WalletPocket.getDefaultInstance());
+                index, com.coinomi.core.protos.Protos.WalletPocket.getDefaultInstance());
       }
       /**
        * <code>repeated .com.coinomi.core.protos.WalletPocket pockets = 6;</code>
        */
-      public java.util.List<com.coinomi.core.protos.Protos.WalletPocket.Builder> 
-           getPocketsBuilderList() {
+      public java.util.List<com.coinomi.core.protos.Protos.WalletPocket.Builder>
+      getPocketsBuilderList() {
         return getPocketsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder> 
-          getPocketsFieldBuilder() {
+              com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder>
+      getPocketsFieldBuilder() {
         if (pocketsBuilder_ == null) {
           pocketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder>(
+                  com.coinomi.core.protos.Protos.WalletPocket, com.coinomi.core.protos.Protos.WalletPocket.Builder, com.coinomi.core.protos.Protos.WalletPocketOrBuilder>(
                   pockets_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -17239,251 +17264,251 @@ public final class Protos {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_PeerAddress_descriptor;
+          internal_static_com_coinomi_core_protos_PeerAddress_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_PeerAddress_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_PeerAddress_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_EncryptedData_descriptor;
+          internal_static_com_coinomi_core_protos_EncryptedData_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_EncryptedData_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_EncryptedData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_DeterministicKey_descriptor;
+          internal_static_com_coinomi_core_protos_DeterministicKey_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_DeterministicKey_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_DeterministicKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_Key_descriptor;
+          internal_static_com_coinomi_core_protos_Key_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_Key_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_Key_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_TransactionInput_descriptor;
+          internal_static_com_coinomi_core_protos_TransactionInput_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_TransactionInput_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_TransactionInput_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_TransactionOutput_descriptor;
+          internal_static_com_coinomi_core_protos_TransactionOutput_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_TransactionOutput_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_TransactionOutput_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_UnspentOutput_descriptor;
+          internal_static_com_coinomi_core_protos_UnspentOutput_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_UnspentOutput_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_UnspentOutput_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor;
+          internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_TransactionConfidence_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_TransactionConfidence_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_Transaction_descriptor;
+          internal_static_com_coinomi_core_protos_Transaction_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_AddressStatus_descriptor;
+          internal_static_com_coinomi_core_protos_AddressStatus_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_WalletPocket_descriptor;
+          internal_static_com_coinomi_core_protos_WalletPocket_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_WalletPocket_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_WalletPocket_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_ScryptParameters_descriptor;
+          internal_static_com_coinomi_core_protos_ScryptParameters_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_ScryptParameters_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_ScryptParameters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_coinomi_core_protos_Wallet_descriptor;
+          internal_static_com_coinomi_core_protos_Wallet_descriptor;
   private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_coinomi_core_protos_Wallet_fieldAccessorTable;
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_com_coinomi_core_protos_Wallet_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  getDescriptor() {
     return descriptor;
   }
   private static com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+          descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014wallet.proto\022\027com.coinomi.core.protos\"" +
-      "A\n\013PeerAddress\022\022\n\nip_address\030\001 \002(\014\022\014\n\004po" +
-      "rt\030\002 \002(\r\022\020\n\010services\030\003 \002(\004\"M\n\rEncryptedD" +
-      "ata\022\035\n\025initialisation_vector\030\001 \002(\014\022\035\n\025en" +
-      "crypted_private_key\030\002 \002(\014\"y\n\020Determinist" +
-      "icKey\022\022\n\nchain_code\030\001 \002(\014\022\014\n\004path\030\002 \003(\r\022" +
-      "\026\n\016issued_subkeys\030\003 \001(\r\022\026\n\016lookahead_siz" +
-      "e\030\004 \001(\r\022\023\n\013isFollowing\030\005 \001(\010\"\330\002\n\003Key\022/\n\004" +
-      "type\030\001 \002(\0162!.com.coinomi.core.protos.Key" +
-      ".Type\022\024\n\014secret_bytes\030\002 \001(\014\022>\n\016encrypted",
-      "_data\030\003 \001(\0132&.com.coinomi.core.protos.En" +
-      "cryptedData\022\022\n\npublic_key\030\004 \001(\014\022\r\n\005label" +
-      "\030\005 \001(\t\022D\n\021deterministic_key\030\006 \001(\0132).com." +
-      "coinomi.core.protos.DeterministicKey\"a\n\004" +
-      "Type\022\014\n\010ORIGINAL\020\001\022\030\n\024ENCRYPTED_SCRYPT_A" +
-      "ES\020\002\022\032\n\026DETERMINISTIC_MNEMONIC\020\003\022\025\n\021DETE" +
-      "RMINISTIC_KEY\020\004\"\222\001\n\020TransactionInput\022\"\n\032" +
-      "transaction_out_point_hash\030\001 \002(\014\022#\n\033tran" +
-      "saction_out_point_index\030\002 \002(\r\022\024\n\014script_" +
-      "bytes\030\003 \002(\014\022\020\n\010sequence\030\004 \001(\r\022\r\n\005value\030\005",
-      " \001(\003\"\247\001\n\021TransactionOutput\022\r\n\005value\030\001 \002(" +
-      "\003\022\024\n\014script_bytes\030\002 \002(\014\022!\n\031spent_by_tran" +
-      "saction_hash\030\003 \001(\014\022\"\n\032spent_by_transacti" +
-      "on_index\030\004 \001(\005\022\027\n\010is_spent\030\005 \001(\010:\005false\022" +
-      "\r\n\005index\030\006 \001(\005\"\202\001\n\rUnspentOutput\022\026\n\016out_" +
-      "point_hash\030\001 \002(\014\022\027\n\017out_point_index\030\002 \002(" +
-      "\r\022\024\n\014script_bytes\030\003 \002(\014\022\r\n\005value\030\004 \002(\003\022\033" +
-      "\n\014is_generated\030\005 \001(\010:\005false\"\271\003\n\025Transact" +
-      "ionConfidence\022A\n\004type\030\001 \001(\01623.com.coinom" +
-      "i.core.protos.TransactionConfidence.Type",
-      "\022\032\n\022appeared_at_height\030\002 \001(\005\022\036\n\026overridi" +
-      "ng_transaction\030\003 \001(\014\022\r\n\005depth\030\004 \001(\005\022:\n\014b" +
-      "roadcast_by\030\005 \003(\0132$.com.coinomi.core.pro" +
-      "tos.PeerAddress\022E\n\006source\030\006 \001(\01625.com.co" +
-      "inomi.core.protos.TransactionConfidence." +
-      "Source\"8\n\004Type\022\013\n\007UNKNOWN\020\000\022\014\n\010BUILDING\020" +
-      "\001\022\013\n\007PENDING\020\002\022\010\n\004DEAD\020\003\"U\n\006Source\022\022\n\016SO" +
-      "URCE_UNKNOWN\020\000\022\022\n\016SOURCE_NETWORK\020\001\022\017\n\013SO" +
-      "URCE_SELF\020\002\022\022\n\016SOURCE_TRUSTED\020\003\"\362\004\n\013Tran" +
-      "saction\022\017\n\007version\030\001 \002(\005\022\014\n\004time\030\013 \001(\005\022\014",
-      "\n\004hash\030\002 \002(\014\0227\n\004pool\030\003 \001(\0162).com.coinomi" +
-      ".core.protos.Transaction.Pool\022\021\n\tlock_ti" +
-      "me\030\004 \001(\r\022\022\n\nupdated_at\030\005 \001(\003\022D\n\021transact" +
-      "ion_input\030\006 \003(\0132).com.coinomi.core.proto" +
-      "s.TransactionInput\022\026\n\016num_of_outputs\030\022 \001" +
-      "(\005\022F\n\022transaction_output\030\007 \003(\0132*.com.coi" +
-      "nomi.core.protos.TransactionOutput\022\022\n\nbl" +
-      "ock_hash\030\010 \003(\014\022 \n\030block_relativity_offse" +
-      "ts\030\t \003(\005\022B\n\nconfidence\030\n \001(\0132..com.coino" +
-      "mi.core.protos.TransactionConfidence\022\020\n\010",
-      "token_id\030\014 \001(\005\022\023\n\013extra_bytes\030\r \001(\014\022\031\n\ni" +
-      "s_trimmed\030\016 \001(\010:\005false\022\025\n\nvalue_sent\030\017 \001" +
-      "(\003:\0010\022\031\n\016value_received\030\020 \001(\003:\0010\022\013\n\003fee\030" +
-      "\021 \001(\003\"5\n\004Pool\022\013\n\007UNSPENT\020\004\022\t\n\005SPENT\020\005\022\010\n" +
-      "\004DEAD\020\n\022\013\n\007PENDING\020\020\"0\n\rAddressStatus\022\017\n" +
-      "\007address\030\001 \002(\t\022\016\n\006status\030\002 \002(\t\"\222\003\n\014Walle" +
-      "tPocket\022\032\n\022network_identifier\030\001 \002(\t\022\023\n\013d" +
-      "escription\030\002 \001(\t\022)\n\003key\030\003 \003(\0132\034.com.coin" +
-      "omi.core.protos.Key\022\034\n\024last_seen_block_h" +
-      "ash\030\004 \001(\014\022\036\n\026last_seen_block_height\030\005 \001(",
-      "\r\022!\n\031last_seen_block_time_secs\030\006 \001(\003\0229\n\013" +
-      "transaction\030\007 \003(\0132$.com.coinomi.core.pro" +
-      "tos.Transaction\022>\n\016address_status\030\010 \003(\0132" +
-      "&.com.coinomi.core.protos.AddressStatus\022" +
-      "\n\n\002id\030\t \001(\t\022>\n\016unspent_output\030\n \003(\0132&.co" +
-      "m.coinomi.core.protos.UnspentOutput\"N\n\020S" +
-      "cryptParameters\022\014\n\004salt\030\001 \002(\014\022\020\n\001n\030\002 \001(\003" +
-      ":\00516384\022\014\n\001r\030\003 \001(\005:\0018\022\014\n\001p\030\004 \001(\005:\0011\"\303\003\n\006" +
-      "Wallet\022\022\n\007version\030\001 \001(\005:\0011\022*\n\004seed\030\002 \001(\013" +
-      "2\034.com.coinomi.core.protos.Key\022\037\n\027seed_p",
-      "assword_protected\030\007 \001(\010\0220\n\nmaster_key\030\003 " +
-      "\002(\0132\034.com.coinomi.core.protos.Key\022T\n\017enc" +
-      "ryption_type\030\004 \001(\0162..com.coinomi.core.pr" +
-      "otos.Wallet.EncryptionType:\013UNENCRYPTED\022" +
-      "H\n\025encryption_parameters\030\005 \001(\0132).com.coi" +
-      "nomi.core.protos.ScryptParameters\0226\n\007poc" +
-      "kets\030\006 \003(\0132%.com.coinomi.core.protos.Wal" +
-      "letPocket\"N\n\016EncryptionType\022\017\n\013UNENCRYPT" +
-      "ED\020\001\022\030\n\024ENCRYPTED_SCRYPT_AES\020\002\022\021\n\rENCRYP" +
-      "TED_AES\020\003B!\n\027com.coinomi.core.protosB\006Pr",
-      "otos"
+            "\n\014wallet.proto\022\027com.coinomi.core.protos\"" +
+                    "A\n\013PeerAddress\022\022\n\nip_address\030\001 \002(\014\022\014\n\004po" +
+                    "rt\030\002 \002(\r\022\020\n\010services\030\003 \002(\004\"M\n\rEncryptedD" +
+                    "ata\022\035\n\025initialisation_vector\030\001 \002(\014\022\035\n\025en" +
+                    "crypted_private_key\030\002 \002(\014\"y\n\020Determinist" +
+                    "icKey\022\022\n\nchain_code\030\001 \002(\014\022\014\n\004path\030\002 \003(\r\022" +
+                    "\026\n\016issued_subkeys\030\003 \001(\r\022\026\n\016lookahead_siz" +
+                    "e\030\004 \001(\r\022\023\n\013isFollowing\030\005 \001(\010\"\330\002\n\003Key\022/\n\004" +
+                    "type\030\001 \002(\0162!.com.coinomi.core.protos.Key" +
+                    ".Type\022\024\n\014secret_bytes\030\002 \001(\014\022>\n\016encrypted",
+            "_data\030\003 \001(\0132&.com.coinomi.core.protos.En" +
+                    "cryptedData\022\022\n\npublic_key\030\004 \001(\014\022\r\n\005label" +
+                    "\030\005 \001(\t\022D\n\021deterministic_key\030\006 \001(\0132).com." +
+                    "coinomi.core.protos.DeterministicKey\"a\n\004" +
+                    "Type\022\014\n\010ORIGINAL\020\001\022\030\n\024ENCRYPTED_SCRYPT_A" +
+                    "ES\020\002\022\032\n\026DETERMINISTIC_MNEMONIC\020\003\022\025\n\021DETE" +
+                    "RMINISTIC_KEY\020\004\"\222\001\n\020TransactionInput\022\"\n\032" +
+                    "transaction_out_point_hash\030\001 \002(\014\022#\n\033tran" +
+                    "saction_out_point_index\030\002 \002(\r\022\024\n\014script_" +
+                    "bytes\030\003 \002(\014\022\020\n\010sequence\030\004 \001(\r\022\r\n\005value\030\005",
+            " \001(\003\"\247\001\n\021TransactionOutput\022\r\n\005value\030\001 \002(" +
+                    "\003\022\024\n\014script_bytes\030\002 \002(\014\022!\n\031spent_by_tran" +
+                    "saction_hash\030\003 \001(\014\022\"\n\032spent_by_transacti" +
+                    "on_index\030\004 \001(\005\022\027\n\010is_spent\030\005 \001(\010:\005false\022" +
+                    "\r\n\005index\030\006 \001(\005\"\202\001\n\rUnspentOutput\022\026\n\016out_" +
+                    "point_hash\030\001 \002(\014\022\027\n\017out_point_index\030\002 \002(" +
+                    "\r\022\024\n\014script_bytes\030\003 \002(\014\022\r\n\005value\030\004 \002(\003\022\033" +
+                    "\n\014is_generated\030\005 \001(\010:\005false\"\271\003\n\025Transact" +
+                    "ionConfidence\022A\n\004type\030\001 \001(\01623.com.coinom" +
+                    "i.core.protos.TransactionConfidence.Type",
+            "\022\032\n\022appeared_at_height\030\002 \001(\005\022\036\n\026overridi" +
+                    "ng_transaction\030\003 \001(\014\022\r\n\005depth\030\004 \001(\005\022:\n\014b" +
+                    "roadcast_by\030\005 \003(\0132$.com.coinomi.core.pro" +
+                    "tos.PeerAddress\022E\n\006source\030\006 \001(\01625.com.co" +
+                    "inomi.core.protos.TransactionConfidence." +
+                    "Source\"8\n\004Type\022\013\n\007UNKNOWN\020\000\022\014\n\010BUILDING\020" +
+                    "\001\022\013\n\007PENDING\020\002\022\010\n\004DEAD\020\003\"U\n\006Source\022\022\n\016SO" +
+                    "URCE_UNKNOWN\020\000\022\022\n\016SOURCE_NETWORK\020\001\022\017\n\013SO" +
+                    "URCE_SELF\020\002\022\022\n\016SOURCE_TRUSTED\020\003\"\362\004\n\013Tran" +
+                    "saction\022\017\n\007version\030\001 \002(\005\022\014\n\004time\030\013 \001(\005\022\014",
+            "\n\004hash\030\002 \002(\014\0227\n\004pool\030\003 \001(\0162).com.coinomi" +
+                    ".core.protos.Transaction.Pool\022\021\n\tlock_ti" +
+                    "me\030\004 \001(\r\022\022\n\nupdated_at\030\005 \001(\003\022D\n\021transact" +
+                    "ion_input\030\006 \003(\0132).com.coinomi.core.proto" +
+                    "s.TransactionInput\022\026\n\016num_of_outputs\030\022 \001" +
+                    "(\005\022F\n\022transaction_output\030\007 \003(\0132*.com.coi" +
+                    "nomi.core.protos.TransactionOutput\022\022\n\nbl" +
+                    "ock_hash\030\010 \003(\014\022 \n\030block_relativity_offse" +
+                    "ts\030\t \003(\005\022B\n\nconfidence\030\n \001(\0132..com.coino" +
+                    "mi.core.protos.TransactionConfidence\022\020\n\010",
+            "token_id\030\014 \001(\005\022\023\n\013extra_bytes\030\r \001(\014\022\031\n\ni" +
+                    "s_trimmed\030\016 \001(\010:\005false\022\025\n\nvalue_sent\030\017 \001" +
+                    "(\003:\0010\022\031\n\016value_received\030\020 \001(\003:\0010\022\013\n\003fee\030" +
+                    "\021 \001(\003\"5\n\004Pool\022\013\n\007UNSPENT\020\004\022\t\n\005SPENT\020\005\022\010\n" +
+                    "\004DEAD\020\n\022\013\n\007PENDING\020\020\"0\n\rAddressStatus\022\017\n" +
+                    "\007address\030\001 \002(\t\022\016\n\006status\030\002 \002(\t\"\222\003\n\014Walle" +
+                    "tPocket\022\032\n\022network_identifier\030\001 \002(\t\022\023\n\013d" +
+                    "escription\030\002 \001(\t\022)\n\003key\030\003 \003(\0132\034.com.coin" +
+                    "omi.core.protos.Key\022\034\n\024last_seen_block_h" +
+                    "ash\030\004 \001(\014\022\036\n\026last_seen_block_height\030\005 \001(",
+            "\r\022!\n\031last_seen_block_time_secs\030\006 \001(\003\0229\n\013" +
+                    "transaction\030\007 \003(\0132$.com.coinomi.core.pro" +
+                    "tos.Transaction\022>\n\016address_status\030\010 \003(\0132" +
+                    "&.com.coinomi.core.protos.AddressStatus\022" +
+                    "\n\n\002id\030\t \001(\t\022>\n\016unspent_output\030\n \003(\0132&.co" +
+                    "m.coinomi.core.protos.UnspentOutput\"N\n\020S" +
+                    "cryptParameters\022\014\n\004salt\030\001 \002(\014\022\020\n\001n\030\002 \001(\003" +
+                    ":\00516384\022\014\n\001r\030\003 \001(\005:\0018\022\014\n\001p\030\004 \001(\005:\0011\"\303\003\n\006" +
+                    "Wallet\022\022\n\007version\030\001 \001(\005:\0011\022*\n\004seed\030\002 \001(\013" +
+                    "2\034.com.coinomi.core.protos.Key\022\037\n\027seed_p",
+            "assword_protected\030\007 \001(\010\0220\n\nmaster_key\030\003 " +
+                    "\002(\0132\034.com.coinomi.core.protos.Key\022T\n\017enc" +
+                    "ryption_type\030\004 \001(\0162..com.coinomi.core.pr" +
+                    "otos.Wallet.EncryptionType:\013UNENCRYPTED\022" +
+                    "H\n\025encryption_parameters\030\005 \001(\0132).com.coi" +
+                    "nomi.core.protos.ScryptParameters\0226\n\007poc" +
+                    "kets\030\006 \003(\0132%.com.coinomi.core.protos.Wal" +
+                    "letPocket\"N\n\016EncryptionType\022\017\n\013UNENCRYPT" +
+                    "ED\020\001\022\030\n\024ENCRYPTED_SCRYPT_AES\020\002\022\021\n\rENCRYP" +
+                    "TED_AES\020\003B!\n\027com.coinomi.core.protosB\006Pr",
+            "otos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
+            new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+              public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                      com.google.protobuf.Descriptors.FileDescriptor root) {
+                descriptor = root;
+                return null;
+              }
+            };
     com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+            .internalBuildGeneratedFileFrom(descriptorData,
+                    new com.google.protobuf.Descriptors.FileDescriptor[] {
+                    }, assigner);
     internal_static_com_coinomi_core_protos_PeerAddress_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+            getDescriptor().getMessageTypes().get(0);
     internal_static_com_coinomi_core_protos_PeerAddress_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_PeerAddress_descriptor,
-        new java.lang.String[] { "IpAddress", "Port", "Services", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_PeerAddress_descriptor,
+            new java.lang.String[] { "IpAddress", "Port", "Services", });
     internal_static_com_coinomi_core_protos_EncryptedData_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+            getDescriptor().getMessageTypes().get(1);
     internal_static_com_coinomi_core_protos_EncryptedData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_EncryptedData_descriptor,
-        new java.lang.String[] { "InitialisationVector", "EncryptedPrivateKey", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_EncryptedData_descriptor,
+            new java.lang.String[] { "InitialisationVector", "EncryptedPrivateKey", });
     internal_static_com_coinomi_core_protos_DeterministicKey_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+            getDescriptor().getMessageTypes().get(2);
     internal_static_com_coinomi_core_protos_DeterministicKey_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_DeterministicKey_descriptor,
-        new java.lang.String[] { "ChainCode", "Path", "IssuedSubkeys", "LookaheadSize", "IsFollowing", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_DeterministicKey_descriptor,
+            new java.lang.String[] { "ChainCode", "Path", "IssuedSubkeys", "LookaheadSize", "IsFollowing", });
     internal_static_com_coinomi_core_protos_Key_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+            getDescriptor().getMessageTypes().get(3);
     internal_static_com_coinomi_core_protos_Key_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_Key_descriptor,
-        new java.lang.String[] { "Type", "SecretBytes", "EncryptedData", "PublicKey", "Label", "DeterministicKey", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_Key_descriptor,
+            new java.lang.String[] { "Type", "SecretBytes", "EncryptedData", "PublicKey", "Label", "DeterministicKey", });
     internal_static_com_coinomi_core_protos_TransactionInput_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(4);
     internal_static_com_coinomi_core_protos_TransactionInput_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_TransactionInput_descriptor,
-        new java.lang.String[] { "TransactionOutPointHash", "TransactionOutPointIndex", "ScriptBytes", "Sequence", "Value", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_TransactionInput_descriptor,
+            new java.lang.String[] { "TransactionOutPointHash", "TransactionOutPointIndex", "ScriptBytes", "Sequence", "Value", });
     internal_static_com_coinomi_core_protos_TransactionOutput_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(5);
     internal_static_com_coinomi_core_protos_TransactionOutput_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_TransactionOutput_descriptor,
-        new java.lang.String[] { "Value", "ScriptBytes", "SpentByTransactionHash", "SpentByTransactionIndex", "IsSpent", "Index", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_TransactionOutput_descriptor,
+            new java.lang.String[] { "Value", "ScriptBytes", "SpentByTransactionHash", "SpentByTransactionIndex", "IsSpent", "Index", });
     internal_static_com_coinomi_core_protos_UnspentOutput_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+            getDescriptor().getMessageTypes().get(6);
     internal_static_com_coinomi_core_protos_UnspentOutput_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_UnspentOutput_descriptor,
-        new java.lang.String[] { "OutPointHash", "OutPointIndex", "ScriptBytes", "Value", "IsGenerated", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_UnspentOutput_descriptor,
+            new java.lang.String[] { "OutPointHash", "OutPointIndex", "ScriptBytes", "Value", "IsGenerated", });
     internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+            getDescriptor().getMessageTypes().get(7);
     internal_static_com_coinomi_core_protos_TransactionConfidence_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor,
-        new java.lang.String[] { "Type", "AppearedAtHeight", "OverridingTransaction", "Depth", "BroadcastBy", "Source", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_TransactionConfidence_descriptor,
+            new java.lang.String[] { "Type", "AppearedAtHeight", "OverridingTransaction", "Depth", "BroadcastBy", "Source", });
     internal_static_com_coinomi_core_protos_Transaction_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+            getDescriptor().getMessageTypes().get(8);
     internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_Transaction_descriptor,
-        new java.lang.String[] { "Version", "Time", "Hash", "Pool", "LockTime", "UpdatedAt", "TransactionInput", "NumOfOutputs", "TransactionOutput", "BlockHash", "BlockRelativityOffsets", "Confidence", "TokenId", "ExtraBytes", "IsTrimmed", "ValueSent", "ValueReceived", "Fee", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_Transaction_descriptor,
+            new java.lang.String[] { "Version", "Time", "Hash", "Pool", "LockTime", "UpdatedAt", "TransactionInput", "NumOfOutputs", "TransactionOutput", "BlockHash", "BlockRelativityOffsets", "Confidence", "TokenId", "ExtraBytes", "IsTrimmed", "ValueSent", "ValueReceived", "Fee", });
     internal_static_com_coinomi_core_protos_AddressStatus_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+            getDescriptor().getMessageTypes().get(9);
     internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_AddressStatus_descriptor,
-        new java.lang.String[] { "Address", "Status", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_AddressStatus_descriptor,
+            new java.lang.String[] { "Address", "Status", });
     internal_static_com_coinomi_core_protos_WalletPocket_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+            getDescriptor().getMessageTypes().get(10);
     internal_static_com_coinomi_core_protos_WalletPocket_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_WalletPocket_descriptor,
-        new java.lang.String[] { "NetworkIdentifier", "Description", "Key", "LastSeenBlockHash", "LastSeenBlockHeight", "LastSeenBlockTimeSecs", "Transaction", "AddressStatus", "Id", "UnspentOutput", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_WalletPocket_descriptor,
+            new java.lang.String[] { "NetworkIdentifier", "Description", "Key", "LastSeenBlockHash", "LastSeenBlockHeight", "LastSeenBlockTimeSecs", "Transaction", "AddressStatus", "Id", "UnspentOutput", });
     internal_static_com_coinomi_core_protos_ScryptParameters_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+            getDescriptor().getMessageTypes().get(11);
     internal_static_com_coinomi_core_protos_ScryptParameters_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_ScryptParameters_descriptor,
-        new java.lang.String[] { "Salt", "N", "R", "P", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_ScryptParameters_descriptor,
+            new java.lang.String[] { "Salt", "N", "R", "P", });
     internal_static_com_coinomi_core_protos_Wallet_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+            getDescriptor().getMessageTypes().get(12);
     internal_static_com_coinomi_core_protos_Wallet_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_coinomi_core_protos_Wallet_descriptor,
-        new java.lang.String[] { "Version", "Seed", "SeedPasswordProtected", "MasterKey", "EncryptionType", "EncryptionParameters", "Pockets", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_coinomi_core_protos_Wallet_descriptor,
+            new java.lang.String[] { "Version", "Seed", "SeedPasswordProtected", "MasterKey", "EncryptionType", "EncryptionParameters", "Pockets", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

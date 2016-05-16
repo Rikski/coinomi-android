@@ -3,11 +3,14 @@ package com.coinomi.core.wallet;
 import com.coinomi.core.coins.CoinType;
 import com.coinomi.core.coins.FeePolicy;
 import com.coinomi.core.coins.Value;
+import com.coinomi.core.coins.families.WlcFamily;
+import com.coinomi.core.protos.Protos;
 import com.coinomi.core.wallet.families.bitcoin.BitSendRequest;
 import com.coinomi.core.wallet.families.bitcoin.CoinSelection;
 import com.coinomi.core.wallet.families.bitcoin.CoinSelector;
 import com.coinomi.core.wallet.families.bitcoin.OutPointOutput;
 import com.google.common.collect.Lists;
+import com.google.common.math.LongMath;
 
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.Coin;
@@ -15,6 +18,7 @@ import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.InsufficientMoneyException;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.ScriptException;
+import org.bitcoinj.core.Sha256Hash;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionConfidence;
 import org.bitcoinj.core.TransactionInput;
@@ -31,6 +35,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -186,11 +191,28 @@ public class TransactionCreator {
             tx.setPurpose(Transaction.Purpose.USER_PAYMENT);
             req.setCompleted(true);
             req.fee = calculatedFee;
-            int height =
-            for (Transaction tx : unspent.values()) {
-                int oldheight = (int)tx.getTime();
-                BigDecimal val = (new BigDecimal(tx.getValueSentToMe(this))).movePointLeft(8);
-                fee = fee.add(Transaction.getDemurrageInSatoshi(oldheight-2,height,val));
+
+
+            // Calculate the demurrage fee
+            if (coinType instanceof WlcFamily) {
+                BigInteger fee = BigInteger.ZERO;
+                int height = account.getLastBlockSeenHeight();
+
+                for (OutPointOutput utxo : account.getUnspentOutputs(true).values()) {
+                    Transaction txDem = account.getRawTransaction(new Sha256Hash(utxo.getTxHash().toString()));
+                    int oldHeight = (int) txDem.getRefHeight();
+                    long longV = 0;
+                    BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
+                    BigDecimal val = (new BigDecimal(bigV).movePointLeft(8));
+                    fee = fee.add(Protos.Transaction.getDemurrageInSatoshi(oldHeight - 2, height, val));
+                    // long longV = bigV.longValue();
+                    // req.fee = req.fee.add(longV);
+                }
+
+                Transaction.REFERENCE_DEFAULT_MIN_TX_FEE = Coin.valueOf(fee.longValue());
+                Value val = Value.valueOf(account.getCoinType(), fee);
+                req.feePerTxSize = val;
+                tx.setRefHeight(height);
             }
             log.info("  completed: {}", req.tx);
         } finally {

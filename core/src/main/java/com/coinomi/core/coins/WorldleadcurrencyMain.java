@@ -1,11 +1,12 @@
 package com.coinomi.core.coins;
 
 import com.coinomi.core.coins.families.BitFamily;
+import com.coinomi.core.coins.families.WlcFamily;
 
 /**
  * @author John L. Jegutanis
  */
-public class WorldleadcurrencyMain extends BitFamily {
+public class WorldleadcurrencyMain extends WlcFamily {
     private WorldleadcurrencyMain() {
         id = "worldleadcurrency.main";
 

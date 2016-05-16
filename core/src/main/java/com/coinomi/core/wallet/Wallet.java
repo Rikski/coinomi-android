@@ -7,12 +7,14 @@ import com.coinomi.core.coins.families.BitFamily;
 import com.coinomi.core.coins.families.NxtFamily;
 import com.coinomi.core.exceptions.UnsupportedCoinTypeException;
 import com.coinomi.core.protos.Protos;
+import com.coinomi.core.wallet.families.bitcoin.OutPointOutput;
 import com.coinomi.core.wallet.families.nxt.NxtFamilyWallet;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
+import org.bitcoinj.core.Transaction;
 import org.bitcoinj.crypto.DeterministicHierarchy;
 import org.bitcoinj.crypto.DeterministicKey;
 import org.bitcoinj.crypto.HDKeyDerivation;
@@ -34,6 +36,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -69,6 +73,8 @@ final public class Wallet {
     private final static int ACCOUNT_ZERO = 0;
 
     private int version = 2;
+
+    private int lastBlockSeenHeight;
 
     public Wallet(String mnemonic) throws MnemonicException {
         this(CoreUtils.parseMnemonic(mnemonic), null);
@@ -135,12 +141,12 @@ final public class Wallet {
     }
 
     public WalletAccount createAccount(CoinType coin, boolean generateAllKeys,
-                                  @Nullable KeyParameter key) {
+                                       @Nullable KeyParameter key) {
         return createAccounts(Lists.newArrayList(coin), generateAllKeys, key).get(0);
     }
 
     public List<WalletAccount> createAccounts(List<CoinType> coins, boolean generateAllKeys,
-                                  @Nullable KeyParameter key) {
+                                              @Nullable KeyParameter key) {
         lock.lock();
         try {
             ImmutableList.Builder<WalletAccount> newAccounts = ImmutableList.builder();
@@ -725,6 +731,12 @@ final public class Wallet {
         return false;
     }
 
+    public BigInteger getTxValueAfterDemurrage(Transaction tx, int height, BigInteger bigV) {
+        int oldHeight = (int) tx.getRefHeight();
+        BigDecimal in_dec_value = (new BigDecimal(bigV)).movePointLeft(8);
+
+        return bigV.subtract(Protos.Transaction.getDemurrageInSatoshi(oldHeight,height,in_dec_value));
+    }
     // TODO
 //    public void broadcastTx(SendRequest request) throws IOException {
 //        getPocket(request.type).broadcastTx(request.tx);
