@@ -730,13 +730,6 @@ final public class Wallet {
         }
         return false;
     }
-
-    public BigInteger getTxValueAfterDemurrage(Transaction tx, int height, BigInteger bigV) {
-        int oldHeight = (int) tx.getRefHeight();
-        BigDecimal in_dec_value = (new BigDecimal(bigV)).movePointLeft(8);
-
-        return bigV.subtract(Protos.Transaction.getDemurrageInSatoshi(oldHeight,height,in_dec_value));
-    }
     // TODO
 //    public void broadcastTx(SendRequest request) throws IOException {
 //        getPocket(request.type).broadcastTx(request.tx);

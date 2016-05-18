@@ -445,7 +445,7 @@ public class WalletPocketProtobufSerializer {
         }
 
         if (isFamily(tx.getParams(), WORLDLEADCURRENCY)) {
-            tx.setRefHeight(tx.getRefHeight());
+            tx.setRefHeight(txProto.getRefHeight());
         }
 
         int lastIndex = -1;

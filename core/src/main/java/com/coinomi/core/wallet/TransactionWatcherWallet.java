@@ -9,6 +9,7 @@ import com.coinomi.core.network.ServerClient.HistoryTx;
 import com.coinomi.core.network.ServerClient.UnspentTx;
 import com.coinomi.core.network.interfaces.BlockchainConnection;
 import com.coinomi.core.network.interfaces.TransactionEventListener;
+import com.coinomi.core.protos.Protos;
 import com.coinomi.core.util.BitAddressUtils;
 import com.coinomi.core.wallet.families.bitcoin.BitAddress;
 import com.coinomi.core.wallet.families.bitcoin.BitBlockchainConnection;
@@ -41,6 +42,7 @@ import org.bitcoinj.utils.Threading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -569,6 +571,13 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
         }
     }
 
+    public BigInteger getTxValueAfterDemurrage(Transaction tx, int height, BigInteger bigV) {
+        int oldHeight = (int) tx.getRefHeight();
+        BigDecimal in_dec_value = (new BigDecimal(bigV)).movePointLeft(8);
+
+        return bigV.subtract(Protos.Transaction.getDemurrageInSatoshi(oldHeight,height,in_dec_value));
+    }
+
     public BigInteger getBalanceAfterDemurrage(boolean includeReceiving) {
         int height = getLastBlockSeenHeight();
         BigInteger value = BigInteger.ZERO;
@@ -578,7 +587,7 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
                 Transaction tx = getRawTransaction(new Sha256Hash(utxo.getTxHash().toString()));
                 long longV = 0;
                 BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
-                value = value.add(wallet.getTxValueAfterDemurrage(tx, height, bigV));
+                value = value.add(getTxValueAfterDemurrage(tx, height, bigV));
             }
             return value;
         } finally {

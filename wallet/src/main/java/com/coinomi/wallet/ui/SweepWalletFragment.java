@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.coinomi.core.coins.CoinType;
 import com.coinomi.core.coins.Value;
+import com.coinomi.core.coins.families.WlcFamily;
 import com.coinomi.core.network.ConnectivityHelper;
 import com.coinomi.core.network.ServerClients;
 import com.coinomi.core.wallet.BitWalletSingleKey;
@@ -37,6 +38,8 @@ import org.bitcoinj.core.TransactionInput;
 import org.bitcoinj.core.TransactionOutPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.math.BigInteger;
 
 import javax.annotation.Nullable;
 
@@ -441,6 +444,12 @@ public class SweepWalletFragment extends Fragment {
             }
 
             Value balance = sweepWallet.getBalance(true);
+
+            if (this.type instanceof WlcFamily)
+            {
+                balance = Value.valueOf(this.type, sweepWallet.getBalanceAfterDemurrage(true));
+            }
+
             if (balance.isPositive()) {
                 log.info("Wallet balance is {}", balance);
                 this.publishProgress(TxStatus.SIGNING);
