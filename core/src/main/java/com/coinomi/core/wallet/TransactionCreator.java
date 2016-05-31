@@ -6,6 +6,7 @@ import com.coinomi.core.coins.Value;
 import com.coinomi.core.coins.families.WlcFamily;
 import com.coinomi.core.protos.Protos;
 import com.coinomi.core.wallet.families.bitcoin.BitSendRequest;
+import com.coinomi.core.wallet.families.bitcoin.BitTransaction;
 import com.coinomi.core.wallet.families.bitcoin.CoinSelection;
 import com.coinomi.core.wallet.families.bitcoin.CoinSelector;
 import com.coinomi.core.wallet.families.bitcoin.OutPointOutput;
@@ -93,6 +94,26 @@ public class TransactionCreator {
             Coin value = Coin.ZERO;
             for (TransactionOutput output : tx.getOutputs()) {
                 value = value.add(output.getValue());
+            }
+
+            // Calculate the demurrage fee
+            if (coinType instanceof WlcFamily) {
+                BigInteger fee = BigInteger.ZERO;
+                int new_height = account.getLastBlockSeenHeight();
+
+                for (OutPointOutput utxo : account.getUnspentOutputs(true).values()) {
+                    BitTransaction bitTx = account.rawTransactions.get(new Sha256Hash(utxo.getTxHash().toString())); //(int) txDem.getRefHeight();
+                    int old_height = bitTx.getRefHeight();
+                    long longV = 0;
+                    BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
+                    BigDecimal val = (new BigDecimal(bigV).movePointLeft(8));
+                    fee = fee.add(account.getDemurrageInSatoshi(old_height - 2, new_height, val));
+                }
+                fee = fee.add(BigInteger.valueOf(50));
+
+                Transaction.REFERENCE_DEFAULT_MIN_TX_FEE = Coin.valueOf(fee.longValue());
+                Value val = Value.valueOf(account.getCoinType(), fee);
+                req.feePerTxSize = val;
             }
 
             log.info("Completing send tx with {} outputs totalling {} (not including fees)",
@@ -189,31 +210,13 @@ public class TransactionCreator {
             // transaction lists more appropriately, especially when the wallet starts to generate transactions itself
             // for internal purposes.
             tx.setPurpose(Transaction.Purpose.USER_PAYMENT);
+            if (coinType instanceof WlcFamily) {
+                int new_height = account.getLastBlockSeenHeight();
+                req.tx.setRefHeight(new_height);
+            }
             req.setCompleted(true);
             req.fee = calculatedFee;
 
-
-            // Calculate the demurrage fee
-            if (coinType instanceof WlcFamily) {
-                BigInteger fee = BigInteger.ZERO;
-                int height = account.getLastBlockSeenHeight();
-
-                for (OutPointOutput utxo : account.getUnspentOutputs(true).values()) {
-                    Transaction txDem = account.getRawTransaction(new Sha256Hash(utxo.getTxHash().toString()));
-                    int oldHeight = (int) txDem.getRefHeight();
-                    long longV = 0;
-                    BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
-                    BigDecimal val = (new BigDecimal(bigV).movePointLeft(8));
-                    fee = fee.add(Protos.Transaction.getDemurrageInSatoshi(oldHeight - 2, height, val));
-                    // long longV = bigV.longValue();
-                    // req.fee = req.fee.add(longV);
-                }
-
-                Transaction.REFERENCE_DEFAULT_MIN_TX_FEE = Coin.valueOf(fee.longValue());
-                Value val = Value.valueOf(account.getCoinType(), fee);
-                req.feePerTxSize = val;
-                tx.setRefHeight(height);
-            }
             log.info("  completed: {}", req.tx);
         } finally {
             lock.unlock();

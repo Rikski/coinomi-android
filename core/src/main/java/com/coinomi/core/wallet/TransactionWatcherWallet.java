@@ -2,6 +2,7 @@ package com.coinomi.core.wallet;
 
 import com.coinomi.core.coins.CoinType;
 import com.coinomi.core.coins.Value;
+import com.coinomi.core.coins.families.WlcFamily;
 import com.coinomi.core.exceptions.TransactionBroadcastException;
 import com.coinomi.core.network.AddressStatus;
 import com.coinomi.core.network.BlockHeader;
@@ -9,7 +10,6 @@ import com.coinomi.core.network.ServerClient.HistoryTx;
 import com.coinomi.core.network.ServerClient.UnspentTx;
 import com.coinomi.core.network.interfaces.BlockchainConnection;
 import com.coinomi.core.network.interfaces.TransactionEventListener;
-import com.coinomi.core.protos.Protos;
 import com.coinomi.core.util.BitAddressUtils;
 import com.coinomi.core.wallet.families.bitcoin.BitAddress;
 import com.coinomi.core.wallet.families.bitcoin.BitBlockchainConnection;
@@ -315,6 +315,7 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
         tx.setExtraBytes(txFull.getExtraBytes());
         tx.setUpdateTime(txFull.getUpdateTime());
         tx.setLockTime(txFull.getLockTime());
+        tx.setRefHeight(txFull.getRefHeight());
 
         if (txFull.getAppearsInHashes() != null) {
             for (Map.Entry<Sha256Hash, Integer> appears : txFull.getAppearsInHashes().entrySet()) {
@@ -555,41 +556,76 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
 
     @Override
     public Value getBalance() {
-        return getBalance(false);
+        if (type instanceof WlcFamily) {
+            return getBalanceAfterDemurrage(false);
+        } else {
+            return getBalance(false);
+        }
+
+
+
     }
 
     public Value getBalance(boolean includeReceiving) {
         lock.lock();
-        try {
-            long value = 0;
-            for (OutPointOutput utxo : getUnspentOutputs(includeReceiving).values()) {
-                value = LongMath.checkedAdd(value, utxo.getValueLong());
+        if (type instanceof WlcFamily) {
+            return getBalanceAfterDemurrage(includeReceiving);
+        } else {
+            try {
+                long value = 0;
+                for (OutPointOutput utxo : getUnspentOutputs(includeReceiving).values()) {
+                    value = LongMath.checkedAdd(value, utxo.getValueLong());
+                }
+                return type.value(value);
+            } finally {
+                lock.unlock();
             }
-            return type.value(value);
-        } finally {
-            lock.unlock();
         }
     }
 
-    public BigInteger getTxValueAfterDemurrage(Transaction tx, int height, BigInteger bigV) {
-        int oldHeight = (int) tx.getRefHeight();
-        BigDecimal in_dec_value = (new BigDecimal(bigV)).movePointLeft(8);
 
-        return bigV.subtract(Protos.Transaction.getDemurrageInSatoshi(oldHeight,height,in_dec_value));
+    /** Calculate demurrage in decimal **/
+    public static BigDecimal getDemurrage(int old_height, int new_height, BigDecimal value) {
+        BigDecimal fee;
+
+        fee = new BigDecimal(0.999996185); // 1-1/Demurrage_RATE from main.h
+        fee = fee.pow(new_height-old_height);
+
+        //log.info("Old height: {}", old_height);
+        //log.info("New height: {}", new_height);
+        fee = fee.multiply(value);
+        fee = value.subtract(fee);
+
+        return fee;
     }
 
-    public BigInteger getBalanceAfterDemurrage(boolean includeReceiving) {
-        int height = getLastBlockSeenHeight();
+    /** Calculate demurrage in satoshi **/
+    public static BigInteger getDemurrageInSatoshi(int old_height, int new_height, BigDecimal value) {
+        BigInteger fee;
+        fee = getDemurrage(old_height, new_height, value).setScale(8, BigDecimal.ROUND_HALF_UP).movePointRight(8).toBigIntegerExact();
+
+        return fee;
+    }
+
+    public BigInteger getTxValueAfterDemurrage(int old_height, int new_height, BigInteger bigV) {
+        BigDecimal in_dec_value = (new BigDecimal(bigV)).movePointLeft(8);
+
+        return bigV.subtract(getDemurrageInSatoshi(old_height,new_height,in_dec_value));
+    }
+
+    public Value getBalanceAfterDemurrage(boolean includeReceiving) {
+        int new_height = getLastBlockSeenHeight();
         BigInteger value = BigInteger.ZERO;
         lock.lock();
         try {
             for (OutPointOutput utxo : getUnspentOutputs(includeReceiving).values()) {
-                Transaction tx = getRawTransaction(new Sha256Hash(utxo.getTxHash().toString()));
-                long longV = 0;
-                BigInteger bigV = BigInteger.valueOf(LongMath.checkedAdd(longV, utxo.getValueLong()));
-                value = value.add(getTxValueAfterDemurrage(tx, height, bigV));
+                BitTransaction bitTx = rawTransactions.get(new Sha256Hash(utxo.getTxHash().toString()));
+                //Transaction rawTx = bitTx.getRawTransaction();
+                int old_height = bitTx.getRefHeight(); // (int) rawTx.getRefHeight();
+                BigInteger bigV = BigInteger.valueOf(utxo.getValueLong());
+                value = value.add(getTxValueAfterDemurrage(old_height, new_height, bigV));
             }
-            return value;
+            return type.value(value.longValue());
         } finally {
             lock.unlock();
         }
@@ -1118,6 +1154,7 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
         lock.lock();
         try {
             Sha256Hash hash = tx.getHash();
+            log.info("Appeared Height from get: {}", fetchingTransactions.get(hash)); //testlog
 
             // If was fetching this tx, remove it
             Integer appearedInHeight = fetchingTransactions.remove(hash);

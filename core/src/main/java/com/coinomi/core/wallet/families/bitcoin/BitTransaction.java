@@ -2,6 +2,7 @@ package com.coinomi.core.wallet.families.bitcoin;
 
 import com.coinomi.core.coins.CoinType;
 import com.coinomi.core.coins.Value;
+import com.coinomi.core.coins.families.WlcFamily;
 import com.coinomi.core.messages.MessageFactory;
 import com.coinomi.core.messages.TxMessage;
 import com.coinomi.core.wallet.AbstractAddress;
@@ -77,6 +78,16 @@ public final class BitTransaction implements AbstractTransaction {
     public static BitTransaction fromTrimmed(Sha256Hash transactionId, Transaction transaction,
                                              Value valueSent, Value valueReceived, Value fee) {
         return new BitTransaction(transactionId, transaction, true, valueSent, valueReceived, fee);
+    }
+
+
+    public int getRefHeight() {
+        if (type instanceof WlcFamily) { return (int) tx.getRefHeight(); }
+        return 0;
+    }
+
+    public void setRefHeight(int refHeight) {
+        if (type instanceof WlcFamily) { tx.setRefHeight(refHeight);}
     }
 
     @Override

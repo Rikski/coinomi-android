@@ -445,11 +445,6 @@ public class SweepWalletFragment extends Fragment {
 
             Value balance = sweepWallet.getBalance(true);
 
-            if (this.type instanceof WlcFamily)
-            {
-                balance = Value.valueOf(this.type, sweepWallet.getBalanceAfterDemurrage(true));
-            }
-
             if (balance.isPositive()) {
                 log.info("Wallet balance is {}", balance);
                 this.publishProgress(TxStatus.SIGNING);

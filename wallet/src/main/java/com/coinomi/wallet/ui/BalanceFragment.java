@@ -20,11 +20,13 @@ import android.widget.Toast;
 
 import com.coinomi.core.coins.CoinType;
 import com.coinomi.core.coins.Value;
+import com.coinomi.core.coins.families.WlcFamily;
 import com.coinomi.core.util.GenericUtils;
 import com.coinomi.core.wallet.AbstractTransaction;
 import com.coinomi.core.wallet.AbstractWallet;
 import com.coinomi.core.wallet.WalletAccount;
 import com.coinomi.core.wallet.WalletConnectivityStatus;
+import com.coinomi.core.wallet.families.bitcoin.BitTransaction;
 import com.coinomi.wallet.AddressBookProvider;
 import com.coinomi.wallet.Configuration;
 import com.coinomi.wallet.Constants;
@@ -39,6 +41,7 @@ import com.coinomi.wallet.util.WeakHandler;
 import com.google.common.collect.Lists;
 
 import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionConfidence;
 import org.bitcoinj.utils.Threading;
 import org.slf4j.Logger;

@@ -76,6 +76,10 @@ public class OutPointOutput {
         return outPoint.getHash();
     }
 
+    public long getRefHeight() {
+        return outPoint.getRefHeight();
+    }
+
     public int getAppearedAtChainHeight() {
         return appearedAtChainHeight;
     }

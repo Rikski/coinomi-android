@@ -709,6 +709,7 @@ public class ServerClient implements BitBlockchainConnection {
         public HistoryTx(JSONObject json) throws JSONException {
             txHash = new Sha256Hash(json.getString("tx_hash"));
             height = json.getInt("height");
+            log.info("HistoryTX(); height: {}", height);
         }
 
         public HistoryTx(TransactionOutPoint txop, int height) {

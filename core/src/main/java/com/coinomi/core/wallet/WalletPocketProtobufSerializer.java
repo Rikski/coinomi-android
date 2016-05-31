@@ -175,6 +175,10 @@ public class WalletPocketProtobufSerializer {
             txBuilder.setLockTime((int) tx.getLockTime());
         }
 
+        if (isFamily(tx.getParams(), WORLDLEADCURRENCY)) {
+            txBuilder.setRefHeight((int) tx.getRefHeight());
+        }
+
         // Handle inputs.
         for (TransactionInput input : tx.getInputs()) {
             Protos.TransactionInput.Builder inputBuilder = Protos.TransactionInput.newBuilder()

@@ -8069,23 +8069,6 @@ public final class Protos {
      * </pre>
      */
 
-    /**
-     * <code>optional int32 time = 11;</code>
-     *
-     * <pre>
-     * Used by Peercoin family
-     * </pre>
-     */
-    boolean hasRefHeight();
-    /**
-     * <code>optional int32 time = 11;</code>
-     *
-     * <pre>
-     * Used by Peercoin family
-     * </pre>
-     */
-    int getRefHeight();
-
     boolean hasUpdatedAt();
     /**
      * <code>optional int64 updated_at = 5;</code>
@@ -8095,6 +8078,23 @@ public final class Protos {
      * </pre>
      */
     long getUpdatedAt();
+
+    /**
+     * <code>optional uint32 ref_height = 19;</code>
+     *
+     * <pre>
+     * Used by Worldleadcurrency family
+     * </pre>
+     */
+    boolean hasRefHeight();
+    /**
+     * <code>optional uint32 time = 19;</code>
+     *
+     * <pre>
+     * Used by Worldleadcurrency family
+     * </pre>
+     */
+    int getRefHeight();
 
     /**
      * <code>repeated .com.coinomi.core.protos.TransactionInput transaction_input = 6;</code>
@@ -8392,7 +8392,7 @@ public final class Protos {
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               updatedAt_ = input.readInt64();
               break;
             }
@@ -8495,8 +8495,8 @@ public final class Protos {
               break;
             }
             case 152: {
-              bitField0_ |= 0x00000020;
-              refHeight_ = input.readInt32();
+              bitField0_ |= 0x00000040;
+              refHeight_ = input.readUInt32();
               break;
             }
           }
@@ -8548,27 +8548,6 @@ public final class Protos {
     @java.lang.Override
     public com.google.protobuf.Parser<Transaction> getParserForType() {
       return PARSER;
-    }
-
-
-    /** Calculate demurrage in decimal **/
-    public static BigDecimal getDemurrage(int old_height, int new_height, BigDecimal value) {
-      BigDecimal fee;
-
-      fee = new BigDecimal(0.999996185); // 1-1/Demurrage_RATE from main.h
-      fee = fee.pow(new_height-old_height);
-      fee = fee.multiply(value);
-      fee = value.subtract(fee);
-
-      return fee;
-    }
-
-    /** Calculate demurrage in satoshi **/
-    public static BigInteger getDemurrageInSatoshi(int old_height, int new_height, BigDecimal value) {
-      BigInteger fee;
-      fee = getDemurrage(old_height, new_height, value).setScale(8, BigDecimal.ROUND_HALF_UP).movePointRight(8).toBigIntegerExact();
-
-      return fee;
     }
 
     /**
@@ -8828,29 +8807,6 @@ public final class Protos {
       return lockTime_;
     }
 
-    public static final int REFHEIGHT_FIELD_NUMBER = 19;
-    private int refHeight_;
-    /**
-     * <code>optional int32 time = 11;</code>
-     *
-     * <pre>
-     * Used by Freicoin family
-     * </pre>
-     */
-    public boolean hasRefHeight() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional int32 time = 11;</code>
-     *
-     * <pre>
-     * Used by Freicoin family
-     * </pre>
-     */
-    public int getRefHeight() {
-      return refHeight_;
-    }
-
     public static final int UPDATED_AT_FIELD_NUMBER = 5;
     private long updatedAt_;
     /**
@@ -8861,7 +8817,7 @@ public final class Protos {
      * </pre>
      */
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional int64 updated_at = 5;</code>
@@ -8872,6 +8828,29 @@ public final class Protos {
      */
     public long getUpdatedAt() {
       return updatedAt_;
+    }
+
+    public static final int REF_HEIGHT_FIELD_NUMBER = 19;
+    private int refHeight_;
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Worldleadcurrency family
+     * </pre>
+     */
+    public boolean hasRefHeight() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional int32 time = 11;</code>
+     *
+     * <pre>
+     * Used by Worldleadcurrency family
+     * </pre>
+     */
+    public int getRefHeight() {
+      return refHeight_;
     }
 
     public static final int TRANSACTION_INPUT_FIELD_NUMBER = 6;
@@ -9187,8 +9166,8 @@ public final class Protos {
       hash_ = com.google.protobuf.ByteString.EMPTY;
       pool_ = com.coinomi.core.protos.Protos.Transaction.Pool.UNSPENT;
       lockTime_ = 0;
-      refHeight_ = 0;
       updatedAt_ = 0L;
+      refHeight_ = 0;
       transactionInput_ = java.util.Collections.emptyList();
       numOfOutputs_ = 0;
       transactionOutput_ = java.util.Collections.emptyList();
@@ -9253,7 +9232,7 @@ public final class Protos {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(4, lockTime_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt64(5, updatedAt_);
       }
       for (int i = 0; i < transactionInput_.size(); i++) {
@@ -9295,8 +9274,8 @@ public final class Protos {
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeInt32(18, numOfOutputs_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt32(19, refHeight_);
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeUInt32(19, refHeight_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9323,7 +9302,7 @@ public final class Protos {
         size += com.google.protobuf.CodedOutputStream
                 .computeUInt32Size(4, lockTime_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
                 .computeInt64Size(5, updatedAt_);
       }
@@ -9389,9 +9368,9 @@ public final class Protos {
         size += com.google.protobuf.CodedOutputStream
                 .computeInt32Size(18, numOfOutputs_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeInt32Size(19, refHeight_);
+                .computeUInt32Size(19, refHeight_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9523,9 +9502,9 @@ public final class Protos {
         bitField0_ = (bitField0_ & ~0x00000008);
         lockTime_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
-        refHeight_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000020);
         updatedAt_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        refHeight_ = 0;
         bitField0_ = (bitField0_ & ~0x00000040);
         if (transactionInputBuilder_ == null) {
           transactionInput_ = java.util.Collections.emptyList();
@@ -9614,11 +9593,11 @@ public final class Protos {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.refHeight_ = refHeight_;
+        result.updatedAt_ = updatedAt_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.updatedAt_ = updatedAt_;
+        result.refHeight_ = refHeight_;
         if (transactionInputBuilder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080)) {
             transactionInput_ = java.util.Collections.unmodifiableList(transactionInput_);
@@ -9714,17 +9693,17 @@ public final class Protos {
         if (other.hasLockTime()) {
           setLockTime(other.getLockTime());
         }
-        if (other.hasRefHeight()) {
-          setRefHeight(other.getRefHeight());
-        }
         if (other.hasUpdatedAt()) {
           setUpdatedAt(other.getUpdatedAt());
+        }
+        if (other.hasRefHeight()) {
+          setRefHeight(other.getRefHeight());
         }
         if (transactionInputBuilder_ == null) {
           if (!other.transactionInput_.isEmpty()) {
             if (transactionInput_.isEmpty()) {
               transactionInput_ = other.transactionInput_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureTransactionInputIsMutable();
               transactionInput_.addAll(other.transactionInput_);
@@ -9737,7 +9716,7 @@ public final class Protos {
               transactionInputBuilder_.dispose();
               transactionInputBuilder_ = null;
               transactionInput_ = other.transactionInput_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
               transactionInputBuilder_ =
                       com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                               getTransactionInputFieldBuilder() : null;
@@ -9753,7 +9732,7 @@ public final class Protos {
           if (!other.transactionOutput_.isEmpty()) {
             if (transactionOutput_.isEmpty()) {
               transactionOutput_ = other.transactionOutput_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureTransactionOutputIsMutable();
               transactionOutput_.addAll(other.transactionOutput_);
@@ -9766,7 +9745,7 @@ public final class Protos {
               transactionOutputBuilder_.dispose();
               transactionOutputBuilder_ = null;
               transactionOutput_ = other.transactionOutput_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
               transactionOutputBuilder_ =
                       com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                               getTransactionOutputFieldBuilder() : null;
@@ -9778,7 +9757,7 @@ public final class Protos {
         if (!other.blockHash_.isEmpty()) {
           if (blockHash_.isEmpty()) {
             blockHash_ = other.blockHash_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureBlockHashIsMutable();
             blockHash_.addAll(other.blockHash_);
@@ -9788,7 +9767,7 @@ public final class Protos {
         if (!other.blockRelativityOffsets_.isEmpty()) {
           if (blockRelativityOffsets_.isEmpty()) {
             blockRelativityOffsets_ = other.blockRelativityOffsets_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureBlockRelativityOffsetsIsMutable();
             blockRelativityOffsets_.addAll(other.blockRelativityOffsets_);
@@ -10111,53 +10090,6 @@ public final class Protos {
         return this;
       }
 
-      private int refHeight_ ;
-
-      /**
-       * <code>optional int32 refHeight = 19;</code>
-       *
-       * <pre>
-       * Used by Freicoin family
-       * </pre>
-       */
-      public boolean hasRefHeight() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional int32 refHeight = 19;</code>
-       *
-       * <pre>
-       * Used by Freicoin family
-       * </pre>
-       */
-      public int getRefHeight() {
-        return refHeight_;
-      }
-      /**
-       * <code>optional int32 refHeight = 19;</code>
-       *
-       * <pre>
-       * Used by Freicoin family
-       * </pre>
-       */
-      public Builder setRefHeight(int value) {
-        bitField0_ |= 0x00000020;
-        refHeight_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Used by Freicoin family
-       * </pre>
-       */
-      public Builder clearRefHeight() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        refHeight_ = 0;
-        onChanged();
-        return this;
-      }
-
       private long updatedAt_ ;
       /**
        * <code>optional int64 updated_at = 5;</code>
@@ -10167,7 +10099,7 @@ public final class Protos {
        * </pre>
        */
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional int64 updated_at = 5;</code>
@@ -10187,7 +10119,7 @@ public final class Protos {
        * </pre>
        */
       public Builder setUpdatedAt(long value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         updatedAt_ = value;
         onChanged();
         return this;
@@ -10200,8 +10132,55 @@ public final class Protos {
        * </pre>
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         updatedAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int refHeight_ ;
+
+      /**
+       * <code>optional uint32 ref_Height = 19;</code>
+       *
+       * <pre>
+       * Used by Worldleadcurrency family
+       * </pre>
+       */
+      public boolean hasRefHeight() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional uint32 refHeight = 19;</code>
+       *
+       * <pre>
+       * Used by Worldleadcurrency family
+       * </pre>
+       */
+      public int getRefHeight() {
+        return refHeight_;
+      }
+      /**
+       * <code>optional uint32 ref_Height = 19;</code>
+       *
+       * <pre>
+       * Used by Worldleadcurrency family
+       * </pre>
+       */
+      public Builder setRefHeight(int value) {
+        bitField0_ |= 0x00000040;
+        refHeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Used by Freicoin family
+       * </pre>
+       */
+      public Builder clearRefHeight() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        refHeight_ = 0;
         onChanged();
         return this;
       }
@@ -17375,11 +17354,12 @@ public final class Protos {
                     "Source\"8\n\004Type\022\013\n\007UNKNOWN\020\000\022\014\n\010BUILDING\020" +
                     "\001\022\013\n\007PENDING\020\002\022\010\n\004DEAD\020\003\"U\n\006Source\022\022\n\016SO" +
                     "URCE_UNKNOWN\020\000\022\022\n\016SOURCE_NETWORK\020\001\022\017\n\013SO" +
-                    "URCE_SELF\020\002\022\022\n\016SOURCE_TRUSTED\020\003\"\362\004\n\013Tran" +
+                    "URCE_SELF\020\002\022\022\n\016SOURCE_TRUSTED\020\003\"\262\004\n\013Tran" +
                     "saction\022\017\n\007version\030\001 \002(\005\022\014\n\004time\030\013 \001(\005\022\014",
             "\n\004hash\030\002 \002(\014\0227\n\004pool\030\003 \001(\0162).com.coinomi" +
                     ".core.protos.Transaction.Pool\022\021\n\tlock_ti" +
-                    "me\030\004 \001(\r\022\022\n\nupdated_at\030\005 \001(\003\022D\n\021transact" +
+                    "me\030\004 \001(\r\022\022\n\nupdated_at\030\005 \001(\003\022\022\n\nref_height" +
+                    "\030\014 \001(\003\022D\n\021transact" +
                     "ion_input\030\006 \003(\0132).com.coinomi.core.proto" +
                     "s.TransactionInput\022\026\n\016num_of_outputs\030\022 \001" +
                     "(\005\022F\n\022transaction_output\030\007 \003(\0132*.com.coi" +
@@ -17484,7 +17464,7 @@ public final class Protos {
     internal_static_com_coinomi_core_protos_Transaction_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_com_coinomi_core_protos_Transaction_descriptor,
-            new java.lang.String[] { "Version", "Time", "Hash", "Pool", "LockTime", "UpdatedAt", "TransactionInput", "NumOfOutputs", "TransactionOutput", "BlockHash", "BlockRelativityOffsets", "Confidence", "TokenId", "ExtraBytes", "IsTrimmed", "ValueSent", "ValueReceived", "Fee", });
+            new java.lang.String[] { "Version", "Time", "Hash", "Pool", "LockTime", "UpdatedAt", "RefHeight", "TransactionInput", "NumOfOutputs", "TransactionOutput", "BlockHash", "BlockRelativityOffsets", "Confidence", "TokenId", "ExtraBytes", "IsTrimmed", "ValueSent", "ValueReceived", "Fee", });
     internal_static_com_coinomi_core_protos_AddressStatus_descriptor =
             getDescriptor().getMessageTypes().get(9);
     internal_static_com_coinomi_core_protos_AddressStatus_fieldAccessorTable = new
