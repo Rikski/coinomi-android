@@ -449,6 +449,20 @@ public class BalanceFragment extends WalletFragment implements LoaderCallbacks<L
 //                final Date updateTime2 = tx2.getUpdateTime();
 //                final long time2 = updateTime2 != null ? updateTime2.getTime() : 0;
 
+                // TODO fix stored tx's
+                if (tx1.getType() instanceof WlcFamily) {
+                    TransactionConfidence.ConfidenceType conType = tx1.getConfidenceType();
+                    tx1.setConfidenceType(TransactionConfidence.ConfidenceType.BUILDING);
+                    log.info("tx1 AppearedAtChainHeight: {}", tx1.getAppearedAtChainHeight());
+                    tx1.setConfidenceType(conType);
+                }
+                if (tx2.getType() instanceof WlcFamily) {
+                    TransactionConfidence.ConfidenceType conType = tx2.getConfidenceType();
+                    tx1.setConfidenceType(TransactionConfidence.ConfidenceType.BUILDING);
+                    log.info("tx2 AppearedAtChainHeight: {}", tx2.getAppearedAtChainHeight());
+                    tx1.setConfidenceType(conType);
+                }
+
                 // If both not pending
                 if (!pending1 && !pending2) {
                     final int time1 = tx1.getAppearedAtChainHeight();

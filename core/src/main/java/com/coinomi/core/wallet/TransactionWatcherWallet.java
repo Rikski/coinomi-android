@@ -590,9 +590,6 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
 
         fee = new BigDecimal(0.999996185); // 1-1/Demurrage_RATE from main.h
         fee = fee.pow(new_height-old_height);
-
-        //log.info("Old height: {}", old_height);
-        //log.info("New height: {}", new_height);
         fee = fee.multiply(value);
         fee = value.subtract(fee);
 
@@ -620,8 +617,7 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
         try {
             for (OutPointOutput utxo : getUnspentOutputs(includeReceiving).values()) {
                 BitTransaction bitTx = rawTransactions.get(new Sha256Hash(utxo.getTxHash().toString()));
-                //Transaction rawTx = bitTx.getRawTransaction();
-                int old_height = bitTx.getRefHeight(); // (int) rawTx.getRefHeight();
+                int old_height = bitTx.getRefHeight();
                 BigInteger bigV = BigInteger.valueOf(utxo.getValueLong());
                 value = value.add(getTxValueAfterDemurrage(old_height, new_height, bigV));
             }
@@ -1154,7 +1150,6 @@ abstract public class TransactionWatcherWallet extends AbstractWallet<BitTransac
         lock.lock();
         try {
             Sha256Hash hash = tx.getHash();
-            log.info("Appeared Height from get: {}", fetchingTransactions.get(hash)); //testlog
 
             // If was fetching this tx, remove it
             Integer appearedInHeight = fetchingTransactions.remove(hash);
